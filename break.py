@@ -1,13 +1,13 @@
-import datetime
+from datetime import date
 from os import system, name
 
 #Colors ANSI break codes
 	# 
-	# \u001b[31m
-	# \u001b[32m
-	# \u001b[33m
-	# \u001b[34m
-	# \u001b[35m
+	# \u001b[31m # red
+	# \u001b[32m # green
+	# \u001b[33m # yellow
+	# \u001b[34m # blue
+	# \u001b[35m # purple
 	# \u001b[36m # cyan
 	# \u001b[37m # white
 
@@ -15,27 +15,49 @@ from os import system, name
 def userAction():
 	print("\033[0;36m",end="") # cyan
 	print('BREAKFAST - LOGGER\n')
-	print('\u001b[32m', end="") #
+	print('\u001b[32m', end="") # green
 	print('What do you want to do?')
 	print("\033[1;37m",end="") # white
 	print('1 - Input Recording')
 	print('2 - Show Recordings')
 	print('3 - Show One Recording')
-	print('d - Toggle DateStamp - Now: {}'.format(dateStamp))
+	print('d - Toggle DateStamp       - Now: ',end="")
+	print('\u001b[35m',end="") # purple
+	print('{}'.format(youWantDateStamp))
+	print('\u001b[37m',end="") # white
+	print('f - Toggle ForcedOnePerDay - Now: ',end="")
+	print('\u001b[35m',end="") # purple
+	print('{}'.format(oneRegPerDayForced))
+	print('\u001b[37m',end="") # white
 	print('x - exit')
 	return input()
 
 # sub_selectors
 
 def breakfastLogging():
-	breakfastData = input('What did you eat for breakfast today?') + "\n"
-	if dateStamp:
-		date = datetime.datetime.now()
-		breakfastData = date.strftime('%c') + ' -> ' + breakfastData
-	breakfastList.append(breakfastData)
-	writeFile(breakfastList) # from list to lines in a file
-	print(breakfastData,' recorded')
-
+	today = date.today()
+	todayString = today.strftime('%Y - %m - %d')
+	lastEntry = breakfastList[len(breakfastList)-1]
+	lastEntry = lastEntry.split('->')
+	lastEntryDate = lastEntry[0].strip()
+	# print(lastEntry)
+	# print(lastEntryDate)
+	# print(todayString)
+	if lastEntryDate == todayString and oneRegPerDayForced:
+		print("\033[0;31m",end="") # red
+		print('\nToday is allready recorded')
+		print('Only one entry each day\n')
+		print('\u001b[37m', end="") # white
+	else:
+		breakfastData = input('What did you eat for breakfast today?') + "\n"
+		if youWantDateStamp:
+			breakfastData = todayString + ' -> ' + breakfastData
+		breakfastList.append(breakfastData)
+		writeFile(breakfastList) # from list to lines in a file
+		print('\n\033[035m',end="") # purple
+		print('Recorded: ',end="")
+		print('\n\033[037m',end="") # white
+		print(breakfastData)
 
 def showBreakfastLog():
 	clearScreen()
@@ -96,11 +118,13 @@ def writeFile(content):
 
 
 def toggleDateStamp():
-	global dateStamp
-	if dateStamp == True:
-		dateStamp = False
-	else:
-		dateStamp = True
+	global youWantDateStamp
+	youWantDateStamp = False if youWantDateStamp == True else True
+
+def toggleForcedOnePerDay():
+	global oneRegPerDayForced
+	oneRegPerDayForced = False if oneRegPerDayForced == True else True
+
 
 ####################################
 # start of app
@@ -108,7 +132,8 @@ def toggleDateStamp():
 
 # global vars
 loop = True
-dateStamp = True
+youWantDateStamp = True
+oneRegPerDayForced = True
 
 # global list
 breakfastList = readFile()
@@ -117,6 +142,7 @@ clearScreen()
 
 # main loop
 while loop:
+	# global youWantDateStamp
 	userchoice = userAction()
 	# Needs user input checking
 	if userchoice == '1':
@@ -127,6 +153,8 @@ while loop:
 		showOneBreakfastItem()
 	elif userchoice == 'd':
 		toggleDateStamp()
+	elif userchoice == 'f':
+		toggleForcedOnePerDay()
 	elif userchoice == 'x':
 		loop = False
 

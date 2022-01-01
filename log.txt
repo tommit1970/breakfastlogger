@@ -18,3 +18,25 @@ Thu Dec 30 13:08:13 2021 -> Nudler
 Thu Dec 30 13:41:25 2021 -> Suppe
 Fri Dec 31 14:30:50 2021 -> Havregrøt
 Fri Dec 31 14:32:08 2021 -> Gryn
+Sat Jan  1 16:08:47 2022 -> Havregrøt
+Sat Jan  1 16:13:47 2022 -> Yoghurt
+Sat Jan  1 16:40:07 2022 -> Honning
+Sat Jan  1 16:42:07 2022 -> Gress
+Sat Jan  1 00:00:00 2022 -> Curry
+22 - 01 - 01 -> Drugs
+2022 - 01 - 01 -> Juice
+2022 - 01 - 01 -> Krem
+2022 - 01 - 01 -> Hurum
+2022 - 01 - 01 -> Trøfler
+2022 - 01 - 01 -> Karbonade
+2022 - 01 - 01 -> Suppe
+2022 - 01 - 01 -> Kaffe
+2022 - 01 - 01 -> Rosin
+2022 - 01 - 01 -> Saft
+2022 - 01 - 01 -> Juice
+2022 - 01 - 01 -> Hurtigris
+Kremfløte
+2022 - 01 - 01 -> Lefse
+2022 - 01 - 01 -> Kake
+2022 - 01 - 01 -> Hysesuppe
+2022 - 01 - 01 -> Makaroni
