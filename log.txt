@@ -1,0 +1,20 @@
+Wed Dec 22 11:41:10 2021 -> havre
+Wed Dec 22 11:41:41 2021 -> Egg
+Wed Dec 22 11:48:19 2021 -> Pizza
+Wed Dec 22 12:10:59 2021 -> Hamburger
+Thu Dec 30 12:15:49 2021 -> Corn Flakes
+Thu Dec 30 12:20:08 2021 -> Egg og Bacon
+Thu Dec 30 12:38:42 2021 -> Reker
+Thu Dec 30 12:39:45 2021 -> Brødskive
+Thu Dec 30 12:40:51 2021 -> Vann og brød
+Thu Dec 30 12:41:32 2021 -> Syltetøy og brød
+Thu Dec 30 12:42:19 2021 -> Ginsengsuppe
+Thu Dec 30 12:44:23 2021 -> Jungelsyltetøy
+Thu Dec 30 12:49:50 2021 -> Yoghurt
+Lunsj
+Thu Dec 30 13:04:40 2021 -> Lunsj
+Nudler
+Thu Dec 30 13:08:13 2021 -> Nudler
+Thu Dec 30 13:41:25 2021 -> Suppe
+Fri Dec 31 14:30:50 2021 -> Havregrøt
+Fri Dec 31 14:32:08 2021 -> Gryn
