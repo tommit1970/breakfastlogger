@@ -1,4 +1,6 @@
+# Files I don't want to copy to github
 readme.txt
+ansi_colors.txt
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

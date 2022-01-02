@@ -7,29 +7,31 @@ from os import system, name
 	# \u001b[32m # green
 	# \u001b[33m # yellow
 	# \u001b[34m # blue
-	# \u001b[35m # purple
+	# \u001b[35m # magenta
 	# \u001b[36m # cyan
 	# \u001b[37m # white
+	# More on ANSI colors, see ansi_colors.txt
 
 # main_menu_selector
 def userAction():
-	print("\033[0;36m",end="") # cyan
+	print("\033[36m",end="") # cyan
 	print('BREAKFAST - LOGGER\n')
 	print('\u001b[32m', end="") # green
 	print('What do you want to do?')
-	print("\033[1;37m",end="") # white
+	print("\033[37m",end="") # white
 	print('1 - Input Recording')
 	print('2 - Show Recordings')
 	print('3 - Show One Recording')
+	print('4 - Delete One Recording')
 	print('d - Toggle DateStamp       - Now: ',end="")
-	print('\u001b[35m',end="") # purple
+	print('\033[35;1m',end="") # magenta
 	print('{}'.format(youWantDateStamp))
 	print('\u001b[37m',end="") # white
 	print('f - Toggle ForcedOnePerDay - Now: ',end="")
-	print('\u001b[35m',end="") # purple
+	print('\033[35;1m',end="") # magenta
 	print('{}'.format(oneRegPerDayForced))
 	print('\u001b[37m',end="") # white
-	print('x - exit')
+	print('x - exit',end="\n\n")
 	return input()
 
 # sub_selectors
@@ -44,7 +46,7 @@ def breakfastLogging():
 	# print(lastEntryDate)
 	# print(todayString)
 	if lastEntryDate == todayString and oneRegPerDayForced:
-		print("\033[0;31m",end="") # red
+		print("\033[31;1m",end="") # brightred
 		print('\nToday is allready recorded')
 		print('Only one entry each day\n')
 		print('\u001b[37m', end="") # white
@@ -54,18 +56,25 @@ def breakfastLogging():
 			breakfastData = todayString + ' -> ' + breakfastData
 		breakfastList.append(breakfastData)
 		writeFile(breakfastList) # from list to lines in a file
-		print('\n\033[035m',end="") # purple
+		print('\n\033[035m',end="") # magenta
 		print('Recorded: ',end="")
 		print('\n\033[037m',end="") # white
 		print(breakfastData)
 
 def showBreakfastLog():
+	colorOne = '\u001b[31;1m' # bright red
+	normalColor = '\u001b[37m' # white
 	clearScreen()
+	counter = 0
 	for item in breakfastList:
-		print(item)
+		# each item has a linefeed in the end
+		textJunction = '({}{}{}) {}'.format(colorOne,counter,normalColor,item)
+		# textJunction = '{}'.format(item)
+		print(textJunction, end="")
+		counter += 1
 	printLines()
 
-def showOneBreakfastItem():
+def showOneBreakfastEntry():
 	loop = True
 	while loop:
 		listlengthStr = str(len(breakfastList)-1)
@@ -86,10 +95,29 @@ def showOneBreakfastItem():
 					print()
 				loop = False
 			else:
-				print("You're number is out of range")
+				outOfRangeMessage()
 		else:
-			print("You did not type a number")
+			notANumberMessage()
 
+def deleteOneBreakfastEntry():
+	colorOne = '\u001b[31;1m' # bright red
+	normalColor = '\u001b[37m' # white
+	showBreakfastLog()
+	listlength = len(breakfastList)
+	print('Which entry do you want to delete?',end="\n\n")
+	userChoice = input()
+	if userChoice.isnumeric():
+		userChoice = int(userChoice)
+		if userChoice >= 0 and userChoice < listlength:
+			selectedItem = breakfastList[userChoice]
+			print("\nRemoved:")
+			print('({}{}{}) {}'.format(colorOne,str(userChoice),normalColor,selectedItem))
+			del breakfastList[userChoice]
+			writeFile(breakfastList)
+		else:
+			outOfRangeMessage()
+	else:
+		notANumberMessage()
 
 def printLines(lines = 5):
 	for item in range(lines):
@@ -101,6 +129,11 @@ def clearScreen():
 	else:
 		_ = system('clear') # will clear your screen on mac/linux-systems
 
+def notANumberMessage():
+	print("You did not type a number")
+
+def outOfRangeMessage():
+	print("You're number is out of range")
 
 
 # file_handling
@@ -143,14 +176,16 @@ clearScreen()
 # main loop
 while loop:
 	# global youWantDateStamp
-	userchoice = userAction()
+	userchoice = userAction() # menu
 	# Needs user input checking
 	if userchoice == '1':
 		breakfastLogging()
 	elif userchoice == '2':
 		showBreakfastLog()
 	elif userchoice == '3':
-		showOneBreakfastItem()
+		showOneBreakfastEntry()
+	elif userchoice == '4':
+		deleteOneBreakfastEntry()
 	elif userchoice == 'd':
 		toggleDateStamp()
 	elif userchoice == 'f':

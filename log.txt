@@ -35,8 +35,10 @@ Sat Jan  1 00:00:00 2022 -> Curry
 2022 - 01 - 01 -> Saft
 2022 - 01 - 01 -> Juice
 2022 - 01 - 01 -> Hurtigris
-Kremfløte
 2022 - 01 - 01 -> Lefse
 2022 - 01 - 01 -> Kake
 2022 - 01 - 01 -> Hysesuppe
 2022 - 01 - 01 -> Makaroni
+2022 - 01 - 02 -> Havregrøt
+Kake
+2022 - 01 - 02 -> Hysepai
