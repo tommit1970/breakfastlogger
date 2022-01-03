@@ -40,5 +40,4 @@ Sat Jan  1 00:00:00 2022 -> Curry
 2022 - 01 - 01 -> Hysesuppe
 2022 - 01 - 01 -> Makaroni
 2022 - 01 - 02 -> Havregrøt
-Kake
-2022 - 01 - 02 -> Hysepai
+2022 - 01 - 03 -> Havregrøt
