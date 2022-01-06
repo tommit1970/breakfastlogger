@@ -1,5 +1,7 @@
 import Modules.smallFunctions as smallFuncs
 
+#Colors ANSI break codes - See file: ansi_colors.txt (only local)
+
 def showBreakfastLog(breakfastList):
 	colorOne = '\u001b[31;1m' # bright red
 	normalColor = '\u001b[37m' # white

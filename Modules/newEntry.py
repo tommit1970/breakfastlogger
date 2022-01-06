@@ -1,5 +1,7 @@
 from datetime import date
 
+#Colors ANSI break codes - See file: ansi_colors.txt (only local)
+
 def breakfastLogging(breakfastList, oneRegPerDayForced, youWantDateStamp, writeFile):
 	today = date.today()
 	todayString = today.strftime('%Y - %m - %d')

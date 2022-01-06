@@ -5,25 +5,7 @@ from Modules.showAllEntries import showBreakfastLog
 from Modules.showOneEntry import showOneBreakfastEntry
 from Modules.deleteOneEntry import deleteOneBreakfastEntry
 import Modules.smallFunctions as smallFuncs
-
-#Colors ANSI break codes - See file: ansi_colors.txt (only local)
-
-
-# sub_selectors
-
-# file_handling
-
-def readFile():
-	logfileOne = open('log.txt', 'r')
-	content = logfileOne.readlines() # from lines in a file to list
-	logfileOne.close()
-	return content
-
-def writeFile(content):
-	logfileOne = open('log.txt','w')
-	logfileOne.writelines(content)
-	logfileOne.close()
-
+from Modules.fileHandling import writeFile, readFile
 
 def toggleDateStamp():
 	global youWantDateStamp
@@ -46,9 +28,10 @@ oneRegPerDayForced = True
 # global list
 breakfastList = readFile()
 
+# Clear screen
 smallFuncs.clearScreen()
 
-# main loop
+# MAIN LOOP
 while loop:
 	# global youWantDateStamp
 	userchoice = userAction(youWantDateStamp, oneRegPerDayForced) # menu
