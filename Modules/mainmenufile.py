@@ -18,7 +18,7 @@ def userAction(youWantDateStamp,oneRegPerDayForced):
 	print(textJunction)
 	textJunction = '{} 3 {} - Show One Recording'.format(bgColorOne, bgColorTwo)
 	print(textJunction)
-	textJunction = '{} 4 {} - Delete One Recording'.format(bgColorOne, bgColorTwo)
+	textJunction = '{} 4 {} - Delete Recordings'.format(bgColorOne, bgColorTwo)
 	print(textJunction)
 	textJunction = '{} d {} - Toggle DateStamp - Now: {}{}{}'.format(bgColorOne, bgColorTwo,magenta,youWantDateStamp,white)
 	print(textJunction)

@@ -3,7 +3,7 @@ from Modules.mainmenufile import userAction
 from Modules.newEntry import breakfastLogging
 from Modules.showAllEntries import showBreakfastLog
 from Modules.showOneEntry import showOneBreakfastEntry
-from Modules.deleteOneEntry import deleteOneBreakfastEntry
+from Modules.deleteEntries import deleteBreakfastEntries
 import Modules.smallFunctions as smallFuncs
 from Modules.fileHandling import writeFile, readFile
 
@@ -43,7 +43,7 @@ while loop:
 	elif userchoice == '3':
 		showOneBreakfastEntry(breakfastList)
 	elif userchoice == '4':
-		deleteOneBreakfastEntry(breakfastList, writeFile)
+		deleteBreakfastEntries(breakfastList, writeFile)
 	elif userchoice == 'd':
 		toggleDateStamp()
 	elif userchoice == 'f':

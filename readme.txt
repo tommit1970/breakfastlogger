@@ -11,28 +11,35 @@ See LastPass - GitHub - notes! I need to use this for a while to get used to it.
 
 Currently in Progress:
 ----------------------
-2022/01/06- 2022/01/??:	Delete range of entries, menu 5 (in progress)
-
 
 
 
 
 Thoughts and ideas for change:
 ------------------------------
-- Logfile for changes - metalogfile
-- Admin cheat menu (with toggles) / Regular user menu (no toggles)
+- red 'Removed' on Delete Recording
 - Red color on: 'Out of range' and 'not a number'
+- Admin cheat menu (with toggles) / Regular user menu (no toggles)
+- Logfile for changes - metalogfile
 - monthly structure, 'january', 'february', etc. on 'Show Recordings'
 - ask for date on 'Show One Recording'
-- red 'Removed' on Delete Recording
 - Clean Module-structure
 
 -----------------------------------------------------------------------------
 		H I S T O R Y   O F   C H A N G E S / I M P R O V E M E N T S
 StartDate	EndDate		Change
 -----------------------------------------------------------------------------
-2022/01/05-	2022/01/06:	Another BackgroundColor for the menu-numbers
+Not Gited
+2022/01/06- 2022/01/09:	Delete range of entries, 4 in menu (in progress)
+2022/01/09-	2022/01/09:	Add while-loop to delete one entry
+2022/01/09-	2022/01/09:	Break out of 'delete one recording' and 'range deletion' with 'x'
+2022/01/09-	2022/01/09:	Change menu text on 4 (Delete Recordings)
 
+2022/01/06- 2022/01/09:	Delete range of entries, 4 in menu (in progress), 2022/01/09-	2022/01/09:	Add while-loop to delete one entry, 2022/01/09-	2022/01/09:	Break out of 'delete one recording' and 'range deletion' with 'x', 2022/01/09-	2022/01/09:	Change menu text on 4 (Delete Recordings)
+
+
+Gited
+2022/01/05-	2022/01/06:	Another BackgroundColor for the menu-numbers
 2022/01/03-	2022/01/05: Smaller Modules/Files
 2022/01/05-	2022/01/05:	Show index on -> Show One Recording
 2022/01/02-	2022/01/02:	Delete one entry from breakfastList
