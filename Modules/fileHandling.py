@@ -1,4 +1,4 @@
-
+# Filehandling simple
 
 def readFile():
 	logfileOne = open('log.txt', 'r')

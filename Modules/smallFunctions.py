@@ -1,4 +1,5 @@
 from os import system, name
+import Modules.colors as colors
 
 def printLines(lines = 5):
 	for item in range(lines):
@@ -11,7 +12,7 @@ def clearScreen():
 		_ = system('clear') # will clear your screen on mac/linux-systems
 
 def notANumberMessage():
-	print("You did not type a number")
+	print('{}You did not type a number{}'.format(colors.brightRed,colors.white))
 
 def outOfRangeMessage():
-	print("You're number is out of range")
+	print("{}You're number is out of range{}".format(colors.brightRed,colors.white))

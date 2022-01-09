@@ -17,8 +17,7 @@ Currently in Progress:
 
 Thoughts and ideas for change:
 ------------------------------
-- red 'Removed' on Delete Recording
-- Red color on: 'Out of range' and 'not a number'
+- Abort 'show one recording' with 'x'
 - Admin cheat menu (with toggles) / Regular user menu (no toggles)
 - Logfile for changes - metalogfile
 - monthly structure, 'january', 'february', etc. on 'Show Recordings'
@@ -30,15 +29,17 @@ Thoughts and ideas for change:
 StartDate	EndDate		Change
 -----------------------------------------------------------------------------
 Not Gited
-2022/01/06- 2022/01/09:	Delete range of entries, 4 in menu (in progress)
-2022/01/09-	2022/01/09:	Add while-loop to delete one entry
-2022/01/09-	2022/01/09:	Break out of 'delete one recording' and 'range deletion' with 'x'
-2022/01/09-	2022/01/09:	Change menu text on 4 (Delete Recordings)
 
-2022/01/06- 2022/01/09:	Delete range of entries, 4 in menu (in progress), 2022/01/09-	2022/01/09:	Add while-loop to delete one entry, 2022/01/09-	2022/01/09:	Break out of 'delete one recording' and 'range deletion' with 'x', 2022/01/09-	2022/01/09:	Change menu text on 4 (Delete Recordings)
 
 
 Gited
+2022/01/09-2022/01/09:	Make a colors.py-file with all the colors, one place to rule them all
+2022/01/09-2022/01/09: Red color on: 'Out of range' and 'not a number'
+2022/01/09-2022/01/09: Red 'Removed' on Delete Recording
+2022/01/09-	2022/01/09:	Add while-loop to delete one entry
+2022/01/09-	2022/01/09:	Break out of 'delete one recording' and 'range deletion' with 'x'
+2022/01/09-	2022/01/09:	Change menu text on 4 (Delete Recordings)
+2022/01/06- 2022/01/09:	Delete range of entries, 4 in menu (in progress)
 2022/01/05-	2022/01/06:	Another BackgroundColor for the menu-numbers
 2022/01/03-	2022/01/05: Smaller Modules/Files
 2022/01/05-	2022/01/05:	Show index on -> Show One Recording

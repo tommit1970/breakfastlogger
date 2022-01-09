@@ -9,7 +9,7 @@ from Modules.fileHandling import writeFile, readFile
 
 def toggleDateStamp():
 	global youWantDateStamp
-	youWantDateStamp = False if youWantDateStamp == True else True
+	youWantDateStamp = False if youWantDateStamp == True else True # Ternary Operator in Python
 
 def toggleForcedOnePerDay():
 	global oneRegPerDayForced

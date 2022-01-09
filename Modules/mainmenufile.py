@@ -1,30 +1,26 @@
+import Modules.colors as colors
+
 # main_menu_selector
 def userAction(youWantDateStamp,oneRegPerDayForced):
-	bgColorOne = '\033[41m' # red
-	bgColorTwo = '\033[0;37m' # light grey
-	cyan = '\033[36m'
-	green = '\u001b[32m'
-	white = '\u001b[37m'
-	magenta = '\u001b[34m'
-
-	textJunction = '{}BREAKFAST - LOGGER\n'.format(cyan)
+	
+	textJunction = '{}BREAKFAST - LOGGER\n'.format(colors.cyan)
 	print(textJunction)
-	textJunction = '{}What do you want to do?'.format(green)
+	textJunction = '{}What do you want to do?'.format(colors.green)
 	print(textJunction)
-	print(white,end="") # white
-	textJunction = '{} 1 {} - Input Recording'.format(bgColorOne, bgColorTwo)
+	print(colors.white,end="")
+	textJunction = '{} 1 {} - Input Recording'.format(colors.bgRed, colors.bgLightGrey)
 	print(textJunction)
-	textJunction = '{} 2 {} - Show Recordings'.format(bgColorOne, bgColorTwo)
+	textJunction = '{} 2 {} - Show Recordings'.format(colors.bgRed, colors.bgLightGrey)
 	print(textJunction)
-	textJunction = '{} 3 {} - Show One Recording'.format(bgColorOne, bgColorTwo)
+	textJunction = '{} 3 {} - Show One Recording'.format(colors.bgRed, colors.bgLightGrey)
 	print(textJunction)
-	textJunction = '{} 4 {} - Delete Recordings'.format(bgColorOne, bgColorTwo)
+	textJunction = '{} 4 {} - Delete Recordings'.format(colors.bgRed, colors.bgLightGrey)
 	print(textJunction)
-	textJunction = '{} d {} - Toggle DateStamp - Now: {}{}{}'.format(bgColorOne, bgColorTwo,magenta,youWantDateStamp,white)
+	textJunction = '{} d {} - Toggle DateStamp - Now: {}{}{}'.format(colors.bgRed, colors.bgLightGrey,colors.magenta,youWantDateStamp,colors.white)
 	print(textJunction)
-	textJunction = '{} f {} - Toggle ForcedOnePerDay - Now: {}{}{}'.format(bgColorOne, bgColorTwo,magenta,oneRegPerDayForced,white)
+	textJunction = '{} f {} - Toggle ForcedOnePerDay - Now: {}{}{}'.format(colors.bgRed, colors.bgLightGrey,colors.magenta,oneRegPerDayForced,colors.white)
 	print(textJunction)
-	textJunction = '{} x {} - Exit'.format(bgColorOne, bgColorTwo)
+	textJunction = '{} x {} - Exit'.format(colors.bgRed, colors.bgLightGrey)
 	print(textJunction)
 	print()
 	return input()

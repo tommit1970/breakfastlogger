@@ -1,12 +1,13 @@
 from Modules.showAllEntries import showBreakfastLog
 import Modules.smallFunctions as smallFuncs
+from Modules.fileHandling import writeFile, readFile
+import Modules.colors as colors
 
-#Colors ANSI break codes - See file: ansi_colors.txt (only local)
+#Colors ANSI break codes - See file: ansi_colors.txt and Modules/colors.py
 
-colorOne = '\u001b[31;1m' # bright red
-normalColor = '\u001b[37m' # white
+loop = True
 
-def handleRangeDeletion(firstIndex, lastIndex):
+def handleRangeDeletion(firstIndex, lastIndex, breakfastList):
 	# code goes here
 	print('Range is {} to {}'.format(firstIndex, lastIndex))
 	if lastIndex - firstIndex < 0:
@@ -26,14 +27,12 @@ def handleRangeDeletion(firstIndex, lastIndex):
 	print('FirstIndex = {}'.format(firstIndex))
 
 	for index in range(diff):
-		print("\nRemoved:")
+		print('\n{}Removed:{}'.format(colors.brightRed, colors.white))
 		# firstIndex + index will show former index of deleted entry - the list will shrink on each deletion
-		print('({}{}{}) {}'.format(colorOne,str(firstIndex+index),normalColor,breakfastList[firstIndex]))
+		print('({}{}{}) {}'.format(colors.brightRed,str(firstIndex+index),colors.white,breakfastList[firstIndex]))
 		del breakfastList[firstIndex]
 
 	writeFile(breakfastList)
-
-	loop = False
 
 
 def deleteBreakfastEntries(breakfastList, writeFile):
@@ -62,8 +61,8 @@ def deleteBreakfastEntries(breakfastList, writeFile):
 						userChoice = int(userChoice)
 						if userChoice >= 0 and userChoice < listlength:
 							selectedItem = breakfastList[userChoice]
-							print("\nRemoved:")
-							print('({}{}{}) {}'.format(colorOne,str(userChoice),normalColor,selectedItem))
+							print('\n{}Removed:{}'.format(colors.brightRed, colors.white))
+							print('({}{}{}) {}'.format(colors.brightRed,str(userChoice),colors.white,selectedItem))
 							del breakfastList[userChoice]
 							writeFile(breakfastList)
 							loop = False
@@ -125,7 +124,8 @@ def deleteBreakfastEntries(breakfastList, writeFile):
 						else:
 							smallFuncs.notANumberMessage()
 
-						handleRangeDeletion(firstIndex, lastIndex)
+						handleRangeDeletion(firstIndex, lastIndex, breakfastList)
+						loop = False
 
 
 		elif userChoice == 'x':

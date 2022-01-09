@@ -1,15 +1,15 @@
 import Modules.smallFunctions as smallFuncs
+import Modules.colors as colors
 
 #Colors ANSI break codes - See file: ansi_colors.txt (only local)
 
 def showOneBreakfastEntry(breakfastList):
-	colorOne = '\u001b[31;1m' # bright red
-	normalColor = '\u001b[37m' # white
 	loop = True
 	while loop:
 		listlengthStr = str(len(breakfastList)-1)
 		listlength = len(breakfastList)-1
-		userChoice = input('Which item(from 0 to ' + listlengthStr + ')?')
+		print('Which item(from 0 to ' + listlengthStr + ')?\n')
+		userChoice = input()
 
 		# input check one - number
 		if userChoice.isnumeric():
@@ -19,7 +19,7 @@ def showOneBreakfastEntry(breakfastList):
 			if userNumber <= listlength:
 
 				smallFuncs.printLines(2)
-				textJunction = '({}{}{}) {}'.format(colorOne,userChoice,normalColor,breakfastList[userNumber])
+				textJunction = '({}{}{}) {}'.format(colors.brightRed,userChoice,colors.white,breakfastList[userNumber])
 				print(textJunction)
 				smallFuncs.printLines(2)
 				loop = False
