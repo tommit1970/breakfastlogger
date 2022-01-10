@@ -17,7 +17,6 @@ Currently in Progress:
 
 Thoughts and ideas for change:
 ------------------------------
-- Abort 'show one recording' with 'x'
 - Admin cheat menu (with toggles) / Regular user menu (no toggles)
 - Logfile for changes - metalogfile
 - monthly structure, 'january', 'february', etc. on 'Show Recordings'
@@ -32,7 +31,10 @@ Not Gited
 
 
 
+
 Gited
+2022/01/09-2022/01/10: Abort 'show one recording' with 'x'
+2022/01/09-2022/01/10: Abort 'Input recording' with 'x'
 2022/01/09-2022/01/09:	Make a colors.py-file with all the colors, one place to rule them all
 2022/01/09-2022/01/09: Red color on: 'Out of range' and 'not a number'
 2022/01/09-2022/01/09: Red 'Removed' on Delete Recording

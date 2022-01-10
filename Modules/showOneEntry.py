@@ -8,22 +8,24 @@ def showOneBreakfastEntry(breakfastList):
 	while loop:
 		listlengthStr = str(len(breakfastList)-1)
 		listlength = len(breakfastList)-1
-		print('Which item(from 0 to ' + listlengthStr + ')?\n')
+		print('Which item(from 0 to ' + listlengthStr + ')? (x to abort)\n')
 		userChoice = input()
-
-		# input check one - number
-		if userChoice.isnumeric():
-			userNumber = int(userChoice)
-
-			# input check two - range
-			if userNumber <= listlength:
-
-				smallFuncs.printLines(2)
-				textJunction = '({}{}{}) {}'.format(colors.brightRed,userChoice,colors.white,breakfastList[userNumber])
-				print(textJunction)
-				smallFuncs.printLines(2)
-				loop = False
-			else:
-				smallFuncs.outOfRangeMessage()
+		if userChoice == 'x':
+			loop = False
 		else:
-			smallFuncs.notANumberMessage()
+			# input check one - number
+			if userChoice.isnumeric():
+				userNumber = int(userChoice)
+
+				# input check two - range
+				if userNumber <= listlength:
+
+					smallFuncs.printLines(2)
+					textJunction = '({}{}{}) {}'.format(colors.brightRed,userChoice,colors.white,breakfastList[userNumber])
+					print(textJunction)
+					smallFuncs.printLines(2)
+					loop = False
+				else:
+					smallFuncs.outOfRangeMessage()
+			else:
+				smallFuncs.notANumberMessage()
