@@ -9,6 +9,6 @@ def showBreakfastLog(breakfastList):
 	for item in breakfastList:
 		# each item has a linefeed in the end
 		textJunction = '({}{}{}) {}'.format(colors.brightRed,counter,colors.white,item)
-		print(textJunction, end="")
+		print(textJunction)
 		counter += 1
 	smallFuncs.printLines(3)

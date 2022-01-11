@@ -6,6 +6,7 @@ from Modules.showOneEntry import showOneBreakfastEntry
 from Modules.deleteEntries import deleteBreakfastEntries
 import Modules.smallFunctions as smallFuncs
 from Modules.fileHandling import writeFile, readFile
+from Modules.admin import toggleAdminMode
 
 def toggleDateStamp():
 	global youWantDateStamp
@@ -24,9 +25,10 @@ def toggleForcedOnePerDay():
 loop = True
 youWantDateStamp = True
 oneRegPerDayForced = True
+adminModeOn = False
 
 # global list
-breakfastList = readFile()
+breakfastList = readFile('log.txt')
 
 # Clear screen
 smallFuncs.clearScreen()
@@ -34,7 +36,7 @@ smallFuncs.clearScreen()
 # MAIN LOOP
 while loop:
 	# global youWantDateStamp
-	userchoice = userAction(youWantDateStamp, oneRegPerDayForced) # menu
+	userchoice = userAction() # menu
 	# Needs user input checking
 	if userchoice == '1':
 		breakfastLogging(breakfastList, oneRegPerDayForced, youWantDateStamp,writeFile)
@@ -44,9 +46,11 @@ while loop:
 		showOneBreakfastEntry(breakfastList)
 	elif userchoice == '4':
 		deleteBreakfastEntries(breakfastList, writeFile)
-	elif userchoice == 'd':
+	elif userchoice == 'd' and adminModeOn:
 		toggleDateStamp()
-	elif userchoice == 'f':
+	elif userchoice == 'f' and adminModeOn:
 		toggleForcedOnePerDay()
+	elif userchoice == 'a':
+		toggleAdminMode()
 	elif userchoice == 'x':
 		loop = False

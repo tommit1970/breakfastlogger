@@ -1,8 +1,9 @@
 # Filehandling simple
 
-def readFile():
-	logfileOne = open('log.txt', 'r')
-	content = logfileOne.readlines() # from lines in a file to list
+def readFile(fileName):
+	logfileOne = open(fileName, 'r')
+	content = logfileOne.read().splitlines() # from lines in a file to list
+
 	logfileOne.close()
 	return content
 

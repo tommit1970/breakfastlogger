@@ -7,17 +7,17 @@ I made one PAT that lasts for one week(7 days). It will have to be renewed after
 See LastPass - GitHub - notes! I need to use this for a while to get used to it.
 
 
---------------------------------------------------------------------------------
+-----------------------------------------------------------------------------
 
 Currently in Progress:
 ----------------------
+2022/01/11-2022/01/??:	Admin cheat menu (with toggles) / Regular user menu (no toggles)
 
 
 
 
 Thoughts and ideas for change:
 ------------------------------
-- Admin cheat menu (with toggles) / Regular user menu (no toggles)
 - Logfile for changes - metalogfile
 - monthly structure, 'january', 'february', etc. on 'Show Recordings'
 - ask for date on 'Show One Recording'
