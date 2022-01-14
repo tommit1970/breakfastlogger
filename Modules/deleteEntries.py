@@ -14,25 +14,25 @@ def handleRangeDeletion(firstIndex, lastIndex, breakfastList):
 		diff = firstIndex - lastIndex + 1
 		# lastIndex is First Index
 		firstIndex = lastIndex
-		print('Range is {}'.format(diff))
+		# print('Range is {}'.format(diff))
 	elif lastIndex - firstIndex > 0:
 		diff = lastIndex - firstIndex + 1
 		#firstIndex is First Index
-		print('Range is {}'.format(diff))
+		# print('Range is {}'.format(diff))
 	else: # firstIndex = lastIndex
 		diff = 1
 		#firstIndex is also First Index
-		print('Range is {}'.format(diff))
+		# print('Range is {}'.format(diff))
 
-	print('FirstIndex = {}'.format(firstIndex))
+	# print('FirstIndex = {}'.format(firstIndex))
 
 	for index in range(diff):
 		print('\n{}Removed:{}'.format(colors.brightRed, colors.white))
 		# firstIndex + index will show former index of deleted entry - the list will shrink on each deletion
-		print('({}{}{}) {}'.format(colors.brightRed,str(firstIndex+index),colors.white,breakfastList[firstIndex]))
+		print('({}{}{}) {}\n\n'.format(colors.brightRed,str(firstIndex+index),colors.white,breakfastList[firstIndex]))
 		del breakfastList[firstIndex]
 
-	writeFile(breakfastList)
+	writeFile()
 
 
 def deleteBreakfastEntries(breakfastList, writeFile):
@@ -62,9 +62,9 @@ def deleteBreakfastEntries(breakfastList, writeFile):
 						if userChoice >= 0 and userChoice < listlength:
 							selectedItem = breakfastList[userChoice]
 							print('\n{}Removed:{}'.format(colors.brightRed, colors.white))
-							print('({}{}{}) {}'.format(colors.brightRed,str(userChoice),colors.white,selectedItem))
+							print('({}{}{}) {}\n'.format(colors.brightRed,str(userChoice),colors.white,selectedItem))
 							del breakfastList[userChoice]
-							writeFile(breakfastList)
+							writeFile()
 							loop = False
 						else:
 							smallFuncs.outOfRangeMessage()

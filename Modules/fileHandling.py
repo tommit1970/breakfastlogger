@@ -1,3 +1,4 @@
+import __main__ as main
 # Filehandling simple
 
 def readFile(fileName):
@@ -7,7 +8,12 @@ def readFile(fileName):
 	logfileOne.close()
 	return content
 
-def writeFile(content):
+def writeFile():
 	logfileOne = open('log.txt','w')
-	logfileOne.writelines(content)
+	# print(main.breakfastList)
+	textCollection = ""
+	for item in main.breakfastList:
+		textCollection = textCollection + item + '\n'
+	# print(textCollection)
+	logfileOne.write(textCollection)
 	logfileOne.close()

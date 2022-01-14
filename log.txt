@@ -1,10 +1,5 @@
-22 - 01 - 01 -> Drugs
-2022 - 01 - 01 -> Krem
-2022 - 01 - 01 -> Hurum
 2022 - 01 - 01 -> Trøfler
 2022 - 01 - 01 -> Karbonade
-Sat Jan  1 16:40:07 2022 -> Honning
-22 - 01 - 01 -> Drugs
 2022 - 01 - 01 -> Juice
 2022 - 01 - 01 -> Krem
 2022 - 01 - 01 -> Hurum
@@ -30,3 +25,8 @@ Sat Jan  1 16:40:07 2022 -> Honning
 2022 - 01 - 09 -> Havregrøt
 2022 - 01 - 10 -> Egg, kaviar, yoghurt og pizza
 2022 - 01 - 11 -> Havregrøt
+2022 - 01 - 12 -> Egg, yoghurt
+2022 - 01 - 13 -> Havregrøt
+2022 - 01 - 14 -> Havregrøt
+Havregrøt
+Havregrøt

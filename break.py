@@ -1,4 +1,5 @@
 # from os import system, name
+import sys
 from Modules.mainmenufile import userAction
 from Modules.newEntry import breakfastLogging
 from Modules.showAllEntries import showBreakfastLog
@@ -32,6 +33,7 @@ breakfastList = readFile('log.txt')
 
 # Clear screen
 smallFuncs.clearScreen()
+print(sys.getdefaultencoding())
 
 # MAIN LOOP
 while loop:
@@ -44,7 +46,7 @@ while loop:
 		showBreakfastLog(breakfastList)
 	elif userchoice == '3':
 		showOneBreakfastEntry(breakfastList)
-	elif userchoice == '4':
+	elif userchoice == '4' and adminModeOn:
 		deleteBreakfastEntries(breakfastList, writeFile)
 	elif userchoice == 'd' and adminModeOn:
 		toggleDateStamp()

@@ -23,6 +23,6 @@ def breakfastLogging(breakfastList, oneRegPerDayForced, youWantDateStamp, writeF
 			if youWantDateStamp:
 				breakfastData = todayString + ' -> ' + breakfastData
 			breakfastList.append(breakfastData)
-			writeFile(breakfastList) # from list to lines in a file
+			writeFile() # from list to lines in a file
 			print('{}Recorded:{}'.format(colors.magenta, colors.white),end="")
 			print(breakfastData)
