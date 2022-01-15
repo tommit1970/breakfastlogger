@@ -1,16 +1,15 @@
 from Modules.fileHandling import readFile
 import __main__ as main
 import Modules.colors as colors
+import getpass
 
 
 # Here you ask for admin access
 
 
 def askForCredentials():
-	print('Username: ',end='')
-	userName = input()
-	print('Password: ', end='')
-	userPWD = input()
+	userName = getpass.getpass('Username: ')
+	userPWD = getpass.getpass('Password: ')
 	return {'u':userName,'p':userPWD}
 
 def toggleAdminMode():

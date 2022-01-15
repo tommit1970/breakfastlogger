@@ -1,7 +1,8 @@
 from datetime import date
 import Modules.colors as colors
+from Modules.fileHandling import writeFile
 
-def breakfastLogging(breakfastList, oneRegPerDayForced, youWantDateStamp, writeFile):
+def breakfastLogging(breakfastList, oneRegPerDayForced, youWantDateStamp):
 	# Checking last entry
 	today = date.today()
 	todayString = today.strftime('%Y - %m - %d')

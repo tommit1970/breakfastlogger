@@ -1,4 +1,4 @@
-from Modules.showAllEntries import showBreakfastLog
+from Modules.showEntries import showAll
 import Modules.smallFunctions as smallFuncs
 from Modules.fileHandling import writeFile, readFile
 import Modules.colors as colors
@@ -35,7 +35,7 @@ def handleRangeDeletion(firstIndex, lastIndex, breakfastList):
 	writeFile()
 
 
-def deleteBreakfastEntries(breakfastList, writeFile):
+def deleteBreakfastEntries(breakfastList):
 	# while loop waiting for 1, r or x
 	loop = True
 	

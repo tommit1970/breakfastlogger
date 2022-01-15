@@ -2,11 +2,10 @@
 import sys
 from Modules.mainmenufile import userAction
 from Modules.newEntry import breakfastLogging
-from Modules.showAllEntries import showBreakfastLog
-from Modules.showOneEntry import showOneBreakfastEntry
+import Modules.showEntries as show
 from Modules.deleteEntries import deleteBreakfastEntries
 import Modules.smallFunctions as smallFuncs
-from Modules.fileHandling import writeFile, readFile
+from Modules.fileHandling import readFile
 from Modules.admin import toggleAdminMode
 
 def toggleDateStamp():
@@ -41,13 +40,11 @@ while loop:
 	userchoice = userAction() # menu
 	# Needs user input checking
 	if userchoice == '1':
-		breakfastLogging(breakfastList, oneRegPerDayForced, youWantDateStamp,writeFile)
+		breakfastLogging(breakfastList, oneRegPerDayForced, youWantDateStamp)
 	elif userchoice == '2':
-		showBreakfastLog(breakfastList)
-	elif userchoice == '3':
-		showOneBreakfastEntry(breakfastList)
-	elif userchoice == '4' and adminModeOn:
-		deleteBreakfastEntries(breakfastList, writeFile)
+		show.showMenu(breakfastList)
+	elif userchoice == '3' and adminModeOn:
+		deleteBreakfastEntries(breakfastList)
 	elif userchoice == 'd' and adminModeOn:
 		toggleDateStamp()
 	elif userchoice == 'f' and adminModeOn:

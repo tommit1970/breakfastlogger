@@ -13,12 +13,10 @@ def showMenuRegular():
 	print(textJunction)
 	textJunction = '{} 2 {} - Show Recordings'.format(colors.bgRed, colors.bgLightGrey)
 	print(textJunction)
-	textJunction = '{} 3 {} - Show One Recording'.format(colors.bgRed, colors.bgLightGrey)
-	print(textJunction)
-
+	
 
 def showMenuAdmin():
-	textJunction = '{} 4 {} - Delete Recordings'.format(colors.bgRed, colors.bgLightGrey)
+	textJunction = '{} 3 {} - Delete Recordings'.format(colors.bgRed, colors.bgLightGrey)
 	print(textJunction)
 	textJunction = '{} d {} - Toggle DateStamp - Now: {}{}{}'.format(colors.bgRed, colors.bgLightGrey,colors.magenta,main.youWantDateStamp,colors.white)
 	print(textJunction)
