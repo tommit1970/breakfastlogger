@@ -2,8 +2,8 @@
 import sys
 from Modules.mainmenufile import userAction
 from Modules.newEntry import breakfastLogging
-import Modules.showEntries as show
-from Modules.deleteEntries import deleteBreakfastEntries
+from Modules.showEntries import showEntriesMenu
+from Modules.deleteEntries import deleteEntriesMenu
 import Modules.smallFunctions as smallFuncs
 from Modules.fileHandling import readFile
 from Modules.admin import toggleAdminMode
@@ -22,34 +22,50 @@ def toggleForcedOnePerDay():
 ####################################
 
 # global vars
-loop = True
+
+globals = {	'youWantDateStamp':True,
+			'oneRegPerDayForced':True,
+			'adminModeOn':False,
+			'mainMenu':{'inputRecs':['1',breakfastLogging],
+						'showRecs':['2',showEntriesMenu],
+						'deleteRecs':['3',deleteEntriesMenu],
+						'dateStampToggle':'d',
+						'oneRecPerDayForced':'f',
+						'adminAccess':'a',
+						'exit':'x'}
+			}
+
+
+
 youWantDateStamp = True
 oneRegPerDayForced = True
 adminModeOn = False
 
 # global list
-breakfastList = readFile('log.txt')
+breakfastList = readFile('log.txt') # The file where the breakfasts are logged
 
 # Clear screen
 smallFuncs.clearScreen()
+# print(globals)
 print(sys.getdefaultencoding())
 
 # MAIN LOOP
+loop = True
 while loop:
 	# global youWantDateStamp
-	userchoice = userAction() # menu
+	userChoice = userAction() # menu
 	# Needs user input checking
-	if userchoice == '1':
+	if userChoice == '1':
 		breakfastLogging(breakfastList, oneRegPerDayForced, youWantDateStamp)
-	elif userchoice == '2':
-		show.showMenu(breakfastList)
-	elif userchoice == '3' and adminModeOn:
-		deleteBreakfastEntries(breakfastList)
-	elif userchoice == 'd' and adminModeOn:
+	elif userChoice == '2':
+		showEntriesMenu(breakfastList)
+	elif userChoice == '3' and globals['adminModeOn']:
+		deleteEntriesMenu(breakfastList)
+	elif userChoice == 'd' and globals['adminModeOn']:
 		toggleDateStamp()
-	elif userchoice == 'f' and adminModeOn:
+	elif userChoice == 'f' and globals['adminModeOn']:
 		toggleForcedOnePerDay()
-	elif userchoice == 'a':
+	elif userChoice == 'a':
 		toggleAdminMode()
-	elif userchoice == 'x':
+	elif userChoice == 'x':
 		loop = False

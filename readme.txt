@@ -11,7 +11,7 @@ See LastPass - GitHub - notes! I need to use this for a while to get used to it.
 
 Currently in Progress:
 ----------------------
-- menu options in a dictionary ('inputRec':'1','showRec':'2','deleteRec':'3', etc.)
+- menu options in a dictionary, so I only change it in one place('inputRec':'1','showRec':'2','deleteRec':'3', etc.)
 - Edit recordings when with admin authorities
 - Check delete writeFile() - removed passed function
 
@@ -19,7 +19,6 @@ Currently in Progress:
 
 Thoughts and ideas for change:
 ------------------------------
-- clean deleteEntries.py like showEntries.py with deleteMenu() etc.
 - Logfile for changes - metalogfile
 - monthly structure, 'january', 'february', etc. on 'Show Recordings'
 - ask for date on 'Show One Recording', use time as a structure for saving data
@@ -37,6 +36,7 @@ Not Gited
 
 
 Gited
+2022/01/18-2022/01/18:	Clean deleteEntries.py like showEntries.py with deleteMenu() etc.
 2022/01/15-2022/01/15: Gather Show Recordings and Show One Recording in one option
 2022/01/14-2022/01/14:	When writing password, show no text (or dots/asterix)
 2022/01/12-2022/01/14:	Ø is showed as Ã¸ - how to fix - log.txt was Western(Windows 1252)-encoded - The problem is: What is the encoding of PowerShell($OutputEncoding - utf-8), Python(import sys, sys.getdefaultencoding() - utf-8) and Sublime(see bottom line of app - Western(Windows 1252))?

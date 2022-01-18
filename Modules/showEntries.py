@@ -47,7 +47,7 @@ def showOne(breakfastList):
 				smallFuncs.notANumberMessage()
 
 
-def showMenu(breakfastList):
+def showEntriesMenu(breakfastList):
 	loop = True
 	while loop:
 

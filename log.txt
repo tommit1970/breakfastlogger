@@ -1,9 +1,3 @@
-2022 - 01 - 01 -> Trøfler
-2022 - 01 - 01 -> Karbonade
-2022 - 01 - 01 -> Juice
-2022 - 01 - 01 -> Krem
-2022 - 01 - 01 -> Hurum
-2022 - 01 - 01 -> Trøfler
 2022 - 01 - 01 -> Karbonade
 2022 - 01 - 01 -> Suppe
 2022 - 01 - 01 -> Kaffe
@@ -29,3 +23,6 @@
 2022 - 01 - 13 -> Havregrøt
 2022 - 01 - 14 -> Havregrøt
 2022 - 01 - 15 -> Egg og Yoghurt
+2022 - 01 - 16 -> Egg, kaviar, brød og peanøttsmør
+2022 - 01 - 17 -> Havregrøt
+2022 - 01 - 18 -> Havregrøt

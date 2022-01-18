@@ -6,6 +6,7 @@ def breakfastLogging(breakfastList, oneRegPerDayForced, youWantDateStamp):
 	# Checking last entry
 	today = date.today()
 	todayString = today.strftime('%Y - %m - %d')
+	length = len(breakfastList)
 	lastEntry = breakfastList[len(breakfastList)-1]
 	lastEntry = lastEntry.split('->')
 	lastEntryDate = lastEntry[0].strip()
@@ -20,10 +21,9 @@ def breakfastLogging(breakfastList, oneRegPerDayForced, youWantDateStamp):
 		if breakfastData == 'x':
 			print('No data recorded')
 		else:
-			breakfastData = breakfastData + "\n"
 			if youWantDateStamp:
 				breakfastData = todayString + ' -> ' + breakfastData
 			breakfastList.append(breakfastData)
 			writeFile() # from list to lines in a file
 			print('{}Recorded:{}'.format(colors.magenta, colors.white),end="")
-			print(breakfastData)
+			print(breakfastData, end="\n\n")

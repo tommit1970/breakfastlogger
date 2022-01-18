@@ -27,10 +27,10 @@ def showMenuAdmin():
 # main_menu_selector
 def userAction():
 	showMenuRegular()
-	if main.adminModeOn:
+	if main.globals['adminModeOn']:
 		showMenuAdmin()
 	
-	textJunction = '{} a {} - AdminAccess: {}{}{}'.format(colors.bgRed, colors.bgLightGrey, colors.magenta,main.adminModeOn,colors.white)
+	textJunction = '{} a {} - AdminAccess: {}{}{}'.format(colors.bgRed, colors.bgLightGrey, colors.magenta,main.globals['adminModeOn'],colors.white)
 	print(textJunction)
 
 	textJunction = '{} x {} - Exit'.format(colors.bgRed, colors.bgLightGrey)

@@ -10,10 +10,15 @@ def readFile(fileName):
 
 def writeFile():
 	logfileOne = open('log.txt','w')
-	# print(main.breakfastList)
+	breakfastListLength = len(main.breakfastList)
 	textCollection = ""
-	for item in main.breakfastList:
-		textCollection = textCollection + item + '\n'
+	for i in range(0,breakfastListLength):
+		if i < breakfastListLength-1:
+			textCollection = textCollection + main.breakfastList[i] + '\n'
+		else:
+			textCollection = textCollection + main.breakfastList[i]
+
 	# print(textCollection)
+
 	logfileOne.write(textCollection)
 	logfileOne.close()
