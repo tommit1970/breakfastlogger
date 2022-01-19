@@ -13,8 +13,8 @@ def toggleDateStamp():
 	youWantDateStamp = False if youWantDateStamp == True else True # Ternary Operator in Python
 
 def toggleForcedOnePerDay():
-	global oneRegPerDayForced
-	oneRegPerDayForced = False if oneRegPerDayForced == True else True
+	global oneRecPerDayForced
+	oneRecPerDayForced = False if oneRecPerDayForced == True else True
 
 
 ####################################
@@ -24,21 +24,21 @@ def toggleForcedOnePerDay():
 # global vars
 
 globals = {	'youWantDateStamp':True,
-			'oneRegPerDayForced':True,
+			'oneRecPerDayForced':True,
 			'adminModeOn':False,
-			'mainMenu':{'inputRecs':['1',breakfastLogging],
-						'showRecs':['2',showEntriesMenu],
-						'deleteRecs':['3',deleteEntriesMenu],
-						'dateStampToggle':'d',
-						'oneRecPerDayForced':'f',
-						'adminAccess':'a',
+			'mainMenu':{'inputRecs':['1', breakfastLogging],
+						'showRecs':['2', showEntriesMenu],
+						'deleteRecs':['3', deleteEntriesMenu],
+						'dateStampToggle':['d', toggleDateStamp],
+						'oneRecPerDayForced':['f', toggleForcedOnePerDay],
+						'adminAccess':['a', toggleAdminMode],
 						'exit':'x'}
 			}
 
 
 
 youWantDateStamp = True
-oneRegPerDayForced = True
+oneRecPerDayForced = True
 adminModeOn = False
 
 # global list
@@ -55,17 +55,17 @@ while loop:
 	# global youWantDateStamp
 	userChoice = userAction() # menu
 	# Needs user input checking
-	if userChoice == '1':
-		breakfastLogging(breakfastList, oneRegPerDayForced, youWantDateStamp)
-	elif userChoice == '2':
+	if userChoice == globals['mainMenu']['inputRecs'][0]:
+		breakfastLogging(breakfastList, oneRecPerDayForced, youWantDateStamp)
+	elif userChoice == globals['mainMenu']['showRecs'][0]:
 		showEntriesMenu(breakfastList)
-	elif userChoice == '3' and globals['adminModeOn']:
+	elif userChoice == globals['mainMenu']['deleteRecs'][0] and globals['adminModeOn']:
 		deleteEntriesMenu(breakfastList)
-	elif userChoice == 'd' and globals['adminModeOn']:
+	elif userChoice == globals['mainMenu']['dateStampToggle'][0] and globals['adminModeOn']:
 		toggleDateStamp()
-	elif userChoice == 'f' and globals['adminModeOn']:
+	elif userChoice == globals['mainMenu']['oneRecPerDayForced'][0] and globals['adminModeOn']:
 		toggleForcedOnePerDay()
-	elif userChoice == 'a':
+	elif userChoice == globals['mainMenu']['adminAccess'][0]:
 		toggleAdminMode()
-	elif userChoice == 'x':
+	elif userChoice == globals['mainMenu']['exit']:
 		loop = False

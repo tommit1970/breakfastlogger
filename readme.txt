@@ -11,14 +11,15 @@ See LastPass - GitHub - notes! I need to use this for a while to get used to it.
 
 Currently in Progress:
 ----------------------
-- menu options in a dictionary, so I only change it in one place('inputRec':'1','showRec':'2','deleteRec':'3', etc.)
-- Edit recordings when with admin authorities
-- Check delete writeFile() - removed passed function
+- menu options in a dictionary, so I only change it in one place('inputRec':'1','showRec':'2','deleteRec':'3', etc.) (working on this)
 
 
 
 Thoughts and ideas for change:
 ------------------------------
+- Edit recordings when with admin authorities
+- Check delete writeFile() - removed passed function
+- make show range
 - Logfile for changes - metalogfile
 - monthly structure, 'january', 'february', etc. on 'Show Recordings'
 - ask for date on 'Show One Recording', use time as a structure for saving data

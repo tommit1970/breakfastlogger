@@ -9,18 +9,18 @@ def showMenuRegular():
 	textJunction = '{}What do you want to do?'.format(colors.green)
 	print(textJunction)
 	print(colors.white,end="")
-	textJunction = '{} 1 {} - Input Recording'.format(colors.bgRed, colors.bgLightGrey)
+	textJunction = '{} {} {} - Input Recording'.format(colors.bgRed, main.globals['mainMenu']['inputRecs'][0], colors.bgLightGrey)
 	print(textJunction)
-	textJunction = '{} 2 {} - Show Recordings'.format(colors.bgRed, colors.bgLightGrey)
+	textJunction = '{} {} {} - Show Recordings'.format(colors.bgRed, main.globals['mainMenu']['showRecs'][0], colors.bgLightGrey)
 	print(textJunction)
 	
 
 def showMenuAdmin():
-	textJunction = '{} 3 {} - Delete Recordings'.format(colors.bgRed, colors.bgLightGrey)
+	textJunction = '{} {} {} - Delete Recordings'.format(colors.bgRed, main.globals['mainMenu']['deleteRecs'][0], colors.bgLightGrey)
 	print(textJunction)
-	textJunction = '{} d {} - Toggle DateStamp - Now: {}{}{}'.format(colors.bgRed, colors.bgLightGrey,colors.magenta,main.youWantDateStamp,colors.white)
+	textJunction = '{} {} {} - Toggle DateStamp - Now: {}{}{}'.format(colors.bgRed, main.globals['mainMenu']['dateStampToggle'][0], colors.bgLightGrey,colors.magenta,main.youWantDateStamp,colors.white)
 	print(textJunction)
-	textJunction = '{} f {} - Toggle ForcedOnePerDay - Now: {}{}{}'.format(colors.bgRed, colors.bgLightGrey,colors.magenta,main.oneRegPerDayForced,colors.white)
+	textJunction = '{} {} {} - Toggle ForcedOnePerDay - Now: {}{}{}'.format(colors.bgRed, main.globals['mainMenu']['oneRecPerDayForced'][0], colors.bgLightGrey,colors.magenta,main.oneRecPerDayForced,colors.white)
 	print(textJunction)
 
 
@@ -30,10 +30,10 @@ def userAction():
 	if main.globals['adminModeOn']:
 		showMenuAdmin()
 	
-	textJunction = '{} a {} - AdminAccess: {}{}{}'.format(colors.bgRed, colors.bgLightGrey, colors.magenta,main.globals['adminModeOn'],colors.white)
+	textJunction = '{} {} {} - AdminAccess: {}{}{}'.format(colors.bgRed, main.globals['mainMenu']['adminAccess'][0], colors.bgLightGrey, colors.magenta,main.globals['adminModeOn'],colors.white)
 	print(textJunction)
 
-	textJunction = '{} x {} - Exit'.format(colors.bgRed, colors.bgLightGrey)
+	textJunction = '{} {} {} - Exit'.format(colors.bgRed, main.globals['mainMenu']['exit'], colors.bgLightGrey)
 	print(textJunction)
 	print()
 	return input()
