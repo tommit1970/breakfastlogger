@@ -1,4 +1,3 @@
-2022 - 01 - 01 -> Karbonade
 2022 - 01 - 01 -> Suppe
 2022 - 01 - 01 -> Kaffe
 2022 - 01 - 01 -> Rosin
@@ -27,3 +26,4 @@
 2022 - 01 - 17 -> Havregrøt
 2022 - 01 - 18 -> Havregrøt
 2022 - 01 - 19 -> Havregrøt
+2022 - 01 - 20 -> Havregrøt

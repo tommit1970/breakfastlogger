@@ -7,15 +7,7 @@ from Modules.deleteEntries import deleteEntriesMenu
 import Modules.smallFunctions as smallFuncs
 from Modules.fileHandling import readFile
 from Modules.admin import toggleAdminMode
-
-def toggleDateStamp():
-	global youWantDateStamp
-	youWantDateStamp = False if youWantDateStamp == True else True # Ternary Operator in Python
-
-def toggleForcedOnePerDay():
-	global oneRecPerDayForced
-	oneRecPerDayForced = False if oneRecPerDayForced == True else True
-
+from Modules.togglers import toggleDateStamp, toggleForcedOnePerDay
 
 ####################################
 # start of app
@@ -56,16 +48,16 @@ while loop:
 	userChoice = userAction() # menu
 	# Needs user input checking
 	if userChoice == globals['mainMenu']['inputRecs'][0]:
-		breakfastLogging(breakfastList, oneRecPerDayForced, youWantDateStamp)
+		globals['mainMenu']['inputRecs'][1](breakfastList, globals['oneRecPerDayForced'], globals['youWantDateStamp'])
 	elif userChoice == globals['mainMenu']['showRecs'][0]:
-		showEntriesMenu(breakfastList)
+		globals['mainMenu']['showRecs'][1](breakfastList)
 	elif userChoice == globals['mainMenu']['deleteRecs'][0] and globals['adminModeOn']:
-		deleteEntriesMenu(breakfastList)
+		globals['mainMenu']['deleteRecs'][1](breakfastList)
 	elif userChoice == globals['mainMenu']['dateStampToggle'][0] and globals['adminModeOn']:
-		toggleDateStamp()
+		globals['mainMenu']['dateStampToggle'][1]()
 	elif userChoice == globals['mainMenu']['oneRecPerDayForced'][0] and globals['adminModeOn']:
-		toggleForcedOnePerDay()
+		globals['mainMenu']['oneRecPerDayForced'][1]()
 	elif userChoice == globals['mainMenu']['adminAccess'][0]:
-		toggleAdminMode()
+		globals['mainMenu']['adminAccess'][1]()
 	elif userChoice == globals['mainMenu']['exit']:
 		loop = False

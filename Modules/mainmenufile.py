@@ -18,9 +18,9 @@ def showMenuRegular():
 def showMenuAdmin():
 	textJunction = '{} {} {} - Delete Recordings'.format(colors.bgRed, main.globals['mainMenu']['deleteRecs'][0], colors.bgLightGrey)
 	print(textJunction)
-	textJunction = '{} {} {} - Toggle DateStamp - Now: {}{}{}'.format(colors.bgRed, main.globals['mainMenu']['dateStampToggle'][0], colors.bgLightGrey,colors.magenta,main.youWantDateStamp,colors.white)
+	textJunction = '{} {} {} - Toggle DateStamp - Now: {}{}{}'.format(colors.bgRed, main.globals['mainMenu']['dateStampToggle'][0], colors.bgLightGrey,colors.magenta,main.globals['youWantDateStamp'],colors.white)
 	print(textJunction)
-	textJunction = '{} {} {} - Toggle ForcedOnePerDay - Now: {}{}{}'.format(colors.bgRed, main.globals['mainMenu']['oneRecPerDayForced'][0], colors.bgLightGrey,colors.magenta,main.oneRecPerDayForced,colors.white)
+	textJunction = '{} {} {} - Toggle ForcedOnePerDay - Now: {}{}{}'.format(colors.bgRed, main.globals['mainMenu']['oneRecPerDayForced'][0], colors.bgLightGrey,colors.magenta,main.globals['oneRecPerDayForced'],colors.white)
 	print(textJunction)
 
 
