@@ -1,0 +1,1 @@
+secret = {'username':'blue', 'password':'cheese'}

@@ -11,15 +11,13 @@ See LastPass - GitHub - notes! I need to use this for a while to get used to it.
 
 Currently in Progress:
 ----------------------
-2022/01/17-2022/01/20: Menu options in a dictionary, so I only change it in one place('inputRec':'1','showRec':'2','deleteRec':'3', etc.)
-
+- Edit recordings when with admin authorities
 
 
 Thoughts and ideas for change:
 ------------------------------
-- Edit recordings when with admin authorities
+- Make a numcheck vs. rangecheck function inside smallFunctions.py
 - Check delete writeFile() - removed passed function
-- make show range
 - Logfile for changes - metalogfile
 - monthly structure, 'january', 'february', etc. on 'Show Recordings'
 - ask for date on 'Show One Recording', use time as a structure for saving data
@@ -37,6 +35,9 @@ Not Gited
 
 
 Gited
+2022/01/21-2022/01/21: Make show range
+2022/01/21-2022/01/21: Make username and password into json in a new logindata.py file, removing admin.txt
+2022/01/17-2022/01/20: Menu options in a dictionary, so I only change it in one place('inputRec':'1','showRec':'2','deleteRec':'3', etc.)
 2022/01/18-2022/01/18:	Clean deleteEntries.py like showEntries.py with deleteMenu() etc.
 2022/01/15-2022/01/15: Gather Show Recordings and Show One Recording in one option
 2022/01/14-2022/01/14:	When writing password, show no text (or dots/asterix)

@@ -73,7 +73,7 @@ def deleteRange(breakfastList):
 			if userChoice == 'x':
 				loop = False
 				lastInputNotOK = False
-				print('RangeDeletion part 2 aborted!!!')
+				print('Aborted!!!')
 			else:
 				if userChoice.isnumeric():
 					userChoice = int(userChoice)
