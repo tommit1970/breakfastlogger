@@ -22,7 +22,6 @@ Thoughts and ideas for change:
 - ask for date on 'Show One Recording', use time as a structure for saving data
 - Clean Module-structure
 - Hash the password
-- Just testing desktop github app
 
 
 -----------------------------------------------------------------------------
