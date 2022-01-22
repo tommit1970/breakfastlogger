@@ -1,6 +1,6 @@
-2022 - 01 - 01 -> Kaffe
-2022 - 01 - 01 -> Rosin
-2022 - 01 - 01 -> Saft
+2022 - 01 - 01 -> Te
+2022 - 01 - 01 -> Drue
+2022 - 01 - 01 -> Vann
 2022 - 01 - 01 -> Juice
 2022 - 01 - 01 -> Hurtigris
 2022 - 01 - 01 -> Lefse
@@ -27,3 +27,4 @@
 2022 - 01 - 19 -> Havregrøt
 2022 - 01 - 20 -> Havregrøt
 2022 - 01 - 21 -> Havregrøt
+2022 - 01 - 22 -> Egg, kaviar, brød og Salami

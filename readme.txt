@@ -11,7 +11,6 @@ See LastPass - GitHub - notes! I need to use this for a while to get used to it.
 
 Currently in Progress:
 ----------------------
-- Edit recordings when with admin authorities
 
 
 Thoughts and ideas for change:
@@ -22,6 +21,8 @@ Thoughts and ideas for change:
 - monthly structure, 'january', 'february', etc. on 'Show Recordings'
 - ask for date on 'Show One Recording', use time as a structure for saving data
 - Clean Module-structure
+- Hash the password
+
 
 -----------------------------------------------------------------------------
 		H I S T O R Y   O F   C H A N G E S / I M P R O V E M E N T S
@@ -35,6 +36,7 @@ Not Gited
 
 
 Gited
+2022/01/22-2022/01/22: Edit recordings when with admin authorities
 2022/01/21-2022/01/21: Make show range
 2022/01/21-2022/01/21: Make username and password into json in a new logindata.py file, removing admin.txt
 2022/01/17-2022/01/20: Menu options in a dictionary, so I only change it in one place('inputRec':'1','showRec':'2','deleteRec':'3', etc.)
