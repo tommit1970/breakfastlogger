@@ -11,11 +11,11 @@ See LastPass - GitHub - notes! I need to use this for a while to get used to it.
 
 Currently in Progress:
 ----------------------
+- Make a numcheck vs. rangecheck function inside smallFunctions.py
 
 
 Thoughts and ideas for change:
 ------------------------------
-- Make a numcheck vs. rangecheck function inside smallFunctions.py
 - Check delete writeFile() - removed passed function
 - Logfile for changes - metalogfile
 - monthly structure, 'january', 'february', etc. on 'Show Recordings'
