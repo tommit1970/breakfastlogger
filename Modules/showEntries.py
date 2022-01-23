@@ -1,4 +1,5 @@
 import Modules.smallFunctions as smallFuncs
+# from Modules.smallFunctions import numberAndRangeCheck
 import Modules.colors as colors
 
 #Colors ANSI break codes - See file: ansi_colors.txt (only local)
@@ -51,16 +52,12 @@ def showRange(breakfastList):
 			print('Aborted!!!')
 
 		else:
-			if userChoice.isnumeric():
-				userChoice = int(userChoice)
-				listlength = len(breakfastList)
-				if userChoice >= 0 and userChoice < listlength:
-					firstIndex = userChoice
-					firstInputOK = True
-				else:
-					smallFuncs.outOfRangeMessage()
+			message = smallFuncs.numberAndRangeCheck(breakfastList,userChoice)
+			if isinstance(message, bool):
+				firstIndex = int(userChoice)
+				firstInputOK = True
 			else:
-				smallFuncs.notANumberMessage()
+				print(message)
 
 	if loop: # not aborted
 		
@@ -75,47 +72,33 @@ def showRange(breakfastList):
 				lastInputOK = True
 				print('Aborted!!!')
 			else:
-				if userChoice.isnumeric():
-					userChoice = int(userChoice)
-					listlength = len(breakfastList)
-					if userChoice >= 0 and userChoice < listlength:
-						lastIndex = userChoice
-						lastInputOK = True
-					else:
-						smallFuncs.outOfRangeMessage()
+				message = smallFuncs.numberAndRangeCheck(breakfastList,userChoice)
+				if isinstance(message, bool):
+					lastIndex = int(userChoice)
+					lastInputOK = True
+					handleRangeShow(firstIndex, lastIndex, breakfastList)
+					loop = False
 				else:
-					smallFuncs.notANumberMessage()
-
-				handleRangeShow(firstIndex, lastIndex, breakfastList)
-				loop = False
+					print(message)
 
 def showOne(breakfastList):
 	loop = True
 	while loop:
 		listlengthStr = str(len(breakfastList)-1)
 		listlength = len(breakfastList)-1
-		print('Which item(from 0 to ' + listlengthStr + ')? (x to abort)\n')
+		print('Which item do you want to show(0 to {})? (x to abort)\n'.format(listlengthStr))
 		userChoice = input()
 		if userChoice == 'x':
 			loop = False
 		else:
-			# input check one - number
-			if userChoice.isnumeric():
-				userNumber = int(userChoice)
-
-				# input check two - range
-				if userNumber <= listlength:
-
-					smallFuncs.printLines(2)
-					textJunction = '({}{}{}) {}'.format(colors.brightRed,userChoice,colors.white,breakfastList[userNumber])
-					print(textJunction)
-					smallFuncs.printLines(2)
-					return False # loop
-				else:
-					smallFuncs.outOfRangeMessage()
+			message = smallFuncs.numberAndRangeCheck(breakfastList,userChoice)
+			if isinstance(message, bool): # Checks if message is a boolean value
+				# show entry at index userChoice
+				textJunction = "\n({}{}{}) {}".format(colors.brightRed,userChoice,colors.white,breakfastList[int(userChoice)])
+				print(textJunction, end="\n\n")
+				loop = False # exit loop
 			else:
-				smallFuncs.notANumberMessage()
-
+				print(message) # notNumber or outOfRange
 
 def showEntriesMenu(breakfastList):
 	loop = True

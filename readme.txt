@@ -11,7 +11,6 @@ See LastPass - GitHub - notes! I need to use this for a while to get used to it.
 
 Currently in Progress:
 ----------------------
-- Make a numcheck vs. rangecheck function inside smallFunctions.py
 
 
 Thoughts and ideas for change:
@@ -36,6 +35,7 @@ Not Gited
 
 
 Gited
+2022/01/23-2022/01/23: Make a numcheck vs. rangecheck function inside smallFunctions.py, and make the code in showEntries.py,editEntries.py and deleteEntries.py cleaner
 2022/01/22-2022/01/22: Edit recordings when with admin authorities
 2022/01/21-2022/01/21: Make show range
 2022/01/21-2022/01/21: Make username and password into json in a new logindata.py file, removing admin.txt

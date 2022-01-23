@@ -12,7 +12,21 @@ def clearScreen():
 		_ = system('clear') # will clear your screen on mac/linux-systems
 
 def notANumberMessage():
-	print('{}You did not type a number{}'.format(colors.brightRed,colors.white))
+	print()
 
 def outOfRangeMessage():
-	print("{}You're number is out of range{}".format(colors.brightRed,colors.white))
+	print()
+
+def numberAndRangeCheck(breakfastList, inputValue):
+	# check if number
+	if inputValue.isnumeric():
+		inputValue = int(inputValue)
+		length = len(breakfastList)
+		# check range
+		if inputValue >= 0 and inputValue < length:
+			# return True if both are good else return errormessage
+			return True
+		else:
+			return "{}You're number is out of range{}".format(colors.brightRed,colors.white)
+	else:
+		return '{}You did not type a number{}'.format(colors.brightRed,colors.white)

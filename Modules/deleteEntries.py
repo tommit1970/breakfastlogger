@@ -1,7 +1,7 @@
 from Modules.showEntries import showAll
-import Modules.smallFunctions as smallFuncs
 from Modules.fileHandling import writeFile, readFile
 import Modules.colors as colors
+from Modules.smallFunctions import numberAndRangeCheck
 
 #Colors ANSI break codes - See file: ansi_colors.txt and Modules/colors.py
 
@@ -9,21 +9,13 @@ import Modules.colors as colors
 def handleRangeDeletion(firstIndex, lastIndex, breakfastList):
 	# code goes here
 	print('Range is {} to {}'.format(firstIndex, lastIndex))
-	if lastIndex - firstIndex < 0:
+	if lastIndex - firstIndex < 0: # lastIndex is lower than firstIndex
 		entriesToBeRemoved = firstIndex - lastIndex + 1
-		# lastIndex is First Index
 		firstIndex = lastIndex
-		# print('Range is {}'.format(entriesToBeRemoved))
 	elif lastIndex - firstIndex > 0:
 		entriesToBeRemoved = lastIndex - firstIndex + 1
-		#firstIndex is First Index
-		# print('Range is {}'.format(entriesToBeRemoved))
 	else: # firstIndex = lastIndex
 		entriesToBeRemoved = 1
-		#firstIndex is also First Index
-		# print('Range is {}'.format(entriesToBeRemoved))
-
-	# print('FirstIndex = {}'.format(firstIndex))
 
 	for index in range(entriesToBeRemoved):
 		print('\n{}Removed:{}'.format(colors.brightRed, colors.white))
@@ -40,54 +32,48 @@ def deleteRange(breakfastList):
 	firstIndex = lastIndex = 0
 
 	# Get first index
-	firstInputNotOK = True
+	firstInputOK = False
 
-	while firstInputNotOK:
+	while not firstInputOK:
 		print('Which is your first entry(index) to remove from range? (x to abort)', end="\n\n")
 		userChoice = input()
 		if userChoice == 'x':
 			loop = False
-			firstInputNotOK = False
+			firstInputOK = True
 			print('Aborted!!!')
 
 		else:
-			if userChoice.isnumeric():
+			message = numberAndRangeCheck(breakfastList, userChoice)
+			if isinstance(message, bool):
 				userChoice = int(userChoice)
-				listlength = len(breakfastList)
-				if userChoice >= 0 and userChoice < listlength:
-					firstIndex = userChoice
-					firstInputNotOK = False
-				else:
-					smallFuncs.outOfRangeMessage()
+				firstIndex = userChoice
+				firstInputOK = True
 			else:
-				smallFuncs.notANumberMessage()
+				print(message)
 
 	if loop: # not aborted
 		
 		# Get last index
-		lastInputNotOK = True
+		lastInputOK = False
 
-		while lastInputNotOK:
+		while not lastInputOK:
 			print('Which is your last entry(index) to remove from range? (x to abort)', end="\n\n")
 			userChoice = input()
 			if userChoice == 'x':
 				loop = False
-				lastInputNotOK = False
+				lastInputOK = True
 				print('Aborted!!!')
 			else:
-				if userChoice.isnumeric():
+				message = numberAndRangeCheck(breakfastList, userChoice)
+				if isinstance(message, bool):
 					userChoice = int(userChoice)
-					listlength = len(breakfastList)
-					if userChoice >= 0 and userChoice < listlength:
-						lastIndex = userChoice
-						lastInputNotOK = False
-					else:
-						smallFuncs.outOfRangeMessage()
+					lastIndex = userChoice
+					lastInputOK = True
+					handleRangeDeletion(firstIndex, lastIndex, breakfastList)
+					loop = False
 				else:
-					smallFuncs.notANumberMessage()
+					print(message)
 
-				handleRangeDeletion(firstIndex, lastIndex, breakfastList)
-				loop = False
 
 
 def deleteOne(breakfastList):
@@ -101,19 +87,17 @@ def deleteOne(breakfastList):
 			loop = False
 			print('Aborted!!!')
 		else:
-			if userChoice.isnumeric():
+			message = numberAndRangeCheck(breakfastList, userChoice)
+			if isinstance(message, bool):
 				userChoice = int(userChoice)
-				if userChoice >= 0 and userChoice < listlength:
-					selectedItem = breakfastList[userChoice]
-					print('\n{}Removed:{}'.format(colors.brightRed, colors.white))
-					print('({}{}{}) {}\n'.format(colors.brightRed,str(userChoice),colors.white,selectedItem))
-					del breakfastList[userChoice]
-					writeFile()
-					loop = False
-				else:
-					smallFuncs.outOfRangeMessage()
+				selectedItem = breakfastList[userChoice]
+				print('\n{}Removed:{}'.format(colors.brightRed, colors.white))
+				print('({}{}{}) {}\n'.format(colors.brightRed,str(userChoice),colors.white,selectedItem))
+				del breakfastList[userChoice]
+				writeFile()
+				loop = False
 			else:
-				smallFuncs.notANumberMessage()
+				print(message)
 
 
 def deleteEntriesMenu(breakfastList):

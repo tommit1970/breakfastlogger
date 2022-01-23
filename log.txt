@@ -1,7 +1,3 @@
-2022 - 01 - 01 -> Te
-2022 - 01 - 01 -> Drue
-2022 - 01 - 01 -> Vann
-2022 - 01 - 01 -> Juice
 2022 - 01 - 01 -> Hurtigris
 2022 - 01 - 01 -> Lefse
 2022 - 01 - 01 -> Kake
@@ -28,3 +24,4 @@
 2022 - 01 - 20 -> Havregrøt
 2022 - 01 - 21 -> Havregrøt
 2022 - 01 - 22 -> Egg, kaviar, brød og Salami
+2022 - 01 - 23 -> Egg, kaviar, brød og Salami
