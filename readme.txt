@@ -7,26 +7,26 @@ I made one PAT that lasts for one week(7 days). It will have to be renewed after
 See LastPass - GitHub - notes! I need to use this for a while to get used to it.
 
 
------------------------------------------------------------------------------
+-----------------------------------------------------------------------
 
 Currently in Progress:
 ----------------------
+- monthly structure, 'january', 'february', etc. on 'Show Recordings'
+
 
 
 Thoughts and ideas for change:
 ------------------------------
-- Check delete writeFile() - removed passed function
-- Logfile for changes - metalogfile
-- monthly structure, 'january', 'february', etc. on 'Show Recordings'
 - ask for date on 'Show One Recording', use time as a structure for saving data
 - Clean Module-structure
 - Hash the password
+- improve globals['mainMenu']['inputRecs']['keyNum'/'funcToCall']
 
 
------------------------------------------------------------------------------
+-----------------------------------------------------------------------
 		H I S T O R Y   O F   C H A N G E S / I M P R O V E M E N T S
 StartDate	EndDate				Change
------------------------------------------------------------------------------
+-----------------------------------------------------------------------
 Not Gited
 
 
@@ -35,7 +35,8 @@ Not Gited
 
 
 Gited
-2022/01/23-2022/01/23: Make a numcheck vs. rangecheck function inside smallFunctions.py, and make the code in showEntries.py,editEntries.py and deleteEntries.py cleaner
+2022/01/24-2022/01/??: Logfile for changes - metalogfile, # record new entries (Datetime,New,Item), # record edited entries - prev and new (Datetime,Edited From Old to New), # record deleted entries (Datetime,Removed,Item), # log date of change to each change or set of change
+2022/01/23-2022/01/23: Make a numcheck and rangecheck function inside smallFunctions.py, and make the code in showEntries.py,editEntries.py and deleteEntries.py cleaner
 2022/01/22-2022/01/22: Edit recordings when with admin authorities
 2022/01/21-2022/01/21: Make show range
 2022/01/21-2022/01/21: Make username and password into json in a new logindata.py file, removing admin.txt

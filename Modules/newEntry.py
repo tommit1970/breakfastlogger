@@ -24,6 +24,6 @@ def breakfastLogging(breakfastList, oneRegPerDayForced, youWantDateStamp):
 			if youWantDateStamp:
 				breakfastData = todayString + ' -> ' + breakfastData
 			breakfastList.append(breakfastData)
-			writeFile() # from list to lines in a file
+			writeFile("New\n" + breakfastData) # from list to lines in a file
 			print('{}Recorded:{}'.format(colors.magenta, colors.white),end="")
 			print(breakfastData, end="\n\n")

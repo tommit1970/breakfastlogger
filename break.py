@@ -36,7 +36,7 @@ oneRecPerDayForced = True
 adminModeOn = False
 
 # global list
-breakfastList = readFile('log.txt') # The file where the breakfasts are logged
+breakfastList = readFile('breakfastDataFile.txt') # The file where the breakfasts are logged
 
 # Clear screen
 smallFuncs.clearScreen()

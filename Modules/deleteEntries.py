@@ -1,5 +1,5 @@
 from Modules.showEntries import showAll
-from Modules.fileHandling import writeFile, readFile
+from Modules.fileHandling import writeFile
 import Modules.colors as colors
 from Modules.smallFunctions import numberAndRangeCheck
 
@@ -17,13 +17,22 @@ def handleRangeDeletion(firstIndex, lastIndex, breakfastList):
 	else: # firstIndex = lastIndex
 		entriesToBeRemoved = 1
 
+	changes = ""
+
 	for index in range(entriesToBeRemoved):
 		print('\n{}Removed:{}'.format(colors.brightRed, colors.white))
 		# firstIndex + index will show former index of deleted entry - the list will shrink on each deletion
 		print('({}{}{}) {}\n\n'.format(colors.brightRed,str(firstIndex+index),colors.white,breakfastList[firstIndex]))
+
+		# appended to log.txt
+		if changes == '':
+			changes = breakfastList[firstIndex]
+		else:
+			changes = changes + '\n' + breakfastList[firstIndex]
 		del breakfastList[firstIndex]
 
-	writeFile()
+	changes = 'Removed\n' + changes
+	writeFile(changes)
 
 def deleteRange(breakfastList):
 	loop = True
@@ -93,8 +102,12 @@ def deleteOne(breakfastList):
 				selectedItem = breakfastList[userChoice]
 				print('\n{}Removed:{}'.format(colors.brightRed, colors.white))
 				print('({}{}{}) {}\n'.format(colors.brightRed,str(userChoice),colors.white,selectedItem))
+				
+				#appended to log.txt
+				changes = "Removed\n" + breakfastList[userChoice]
+				
 				del breakfastList[userChoice]
-				writeFile()
+				writeFile(changes)
 				loop = False
 			else:
 				print(message)

@@ -5,7 +5,7 @@ from Modules.smallFunctions import numberAndRangeCheck
 
 def editingEntry(breakfastList, userChoice):
 	# feedback preparations
-	selectedItem = breakfastList[userChoice]
+	oldValue = selectedItem = breakfastList[userChoice]
 	selectedItem = selectedItem.split('->')
 	selectedItemDate = selectedItem[0].strip()
 	selectedItemValue = selectedItem[1].strip()
@@ -22,8 +22,9 @@ def editingEntry(breakfastList, userChoice):
 	#value handling
 	newValue = selectedItemDate + ' -> ' + newValue
 	breakfastList.insert(userChoice, newValue)
+	changes = "Edited\nFrom\n" + oldValue + '\nto\n' + newValue
 	del breakfastList[userChoice+1]
-	writeFile()
+	writeFile(changes)
 
 	# feedback after edit
 	print('\n{}Edited:{}'.format(colors.green, colors.white))
