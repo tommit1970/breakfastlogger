@@ -21,3 +21,97 @@ to
 Wed Jan 26 13:26:46 2022
 New
 2022 - 01 - 26 -> Havregrøt
+Thu Jan 27 21:53:43 2022
+New
+2022 - 01 - 27 -> Havregrøt
+Fri Jan 28 14:59:09 2022
+New
+2022 - 01 - 28 -> Havregrøt
+Fri Jan 28 15:33:36 2022
+New
+2022 - 01 - 28 -> asdf
+Fri Jan 28 15:50:34 2022
+New
+2022 - 01 - 28 -> Havregrøt
+Fri Jan 28 15:52:38 2022
+New
+2022 - 01 - 28 -> Havregrøt
+Fri Jan 28 15:58:10 2022
+New
+2022 - 01 - 28 -> z
+Fri Jan 28 15:58:53 2022
+Removed
+2022 - 01 - 28 -> z
+Fri Jan 28 16:00:11 2022
+New
+2022 - 01 - 28 -> Havregrøt
+Sat Jan 29 10:06:29 2022
+New
+2022 - 01 - 29 -> Egg, kaviar, brød og yoghurt
+Sun Jan 30 13:02:01 2022
+New
+2022 - 01 - 30 -> Egg, kaviar, brød og brøngeb?syltet?y
+Sun Jan 30 15:07:32 2022
+New
+2022 - 01 - 30 -> asdf
+Sun Jan 30 15:08:41 2022
+New
+2022 - 01 - 30 -> asdf
+Sun Jan 30 15:11:33 2022
+Edited
+From
+2022 - 01 - 30 -> asdf
+to
+2022 - 01 - 30 -> Kake
+Sun Jan 30 15:15:59 2022
+Removed
+2022 - 01 - 30 -> Kake
+Sun Jan 30 15:17:35 2022
+Edited
+From
+2022 - 01 - 01 -> Lefse
+to
+2022 - 01 - 01 -> Lompe
+Sun Jan 30 15:18:19 2022
+Removed
+2022 - 01 - 01 -> Lompe
+2022 - 01 - 01 -> Kake
+2022 - 01 - 01 -> Hysesuppe
+Sun Jan 30 15:21:07 2022
+Edited
+From
+2021 - 12 - 31 -> Egg, kaviar, brød og yoghurt
+to
+2021 - 12 - 31 -> Egg, kaviar, brød og knekkebrød
+Sun Jan 30 15:24:24 2022
+Edited
+From
+2021 - 12 - 31 -> Egg, kaviar, brød og knekkebrød
+to
+2021 - 12 - 31 -> Egg, kaviar, brød og knekkebrød
+Sun Jan 30 15:49:40 2022
+New
+2022 - 01 - 30 -> Gresk
+Sun Jan 30 15:52:32 2022
+New
+2022 - 01 - 30 -> Hyse
+Sun Jan 30 15:53:55 2022
+New
+2022 - 01 - 30 -> øøø
+Sun Jan 30 16:15:42 2022
+Removed
+2022 - 01 - 30 -> Hyse
+Sun Jan 30 16:15:49 2022
+Removed
+2022 - 01 - 30 -> Gresk
+Sun Jan 30 16:16:30 2022
+Removed
+2022 - 01 - 01 -> Lefse
+2022 - 01 - 01 -> Kake
+2022 - 01 - 01 -> Hysesuppe
+Sun Jan 30 16:17:00 2022
+Edited
+From
+2022 - 01 - 01 -> Makaroni
+to
+2022 - 01 - 01 -> Havregrøt

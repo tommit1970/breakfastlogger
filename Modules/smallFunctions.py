@@ -1,5 +1,6 @@
 from os import system, name
 import Modules.colors as colors
+import __main__ as main
 
 def printLines(lines = 5):
 	for item in range(lines):
@@ -11,11 +12,11 @@ def clearScreen():
 	else:
 		_ = system('clear') # will clear your screen on mac/linux-systems
 
-def notANumberMessage():
-	print()
+# def notANumberMessage():
+# 	print()
 
-def outOfRangeMessage():
-	print()
+# def outOfRangeMessage():
+# 	print()
 
 def numberAndRangeCheck(breakfastList, inputValue):
 	# check if number
@@ -30,3 +31,8 @@ def numberAndRangeCheck(breakfastList, inputValue):
 			return "{}You're number is out of range{}".format(colors.brightRed,colors.white)
 	else:
 		return '{}You did not type a number{}'.format(colors.brightRed,colors.white)
+
+
+def nothingToShow():
+	textJunction = '{}No data recorded in Year: {}{}{} Month: {}{}'.format(colors.brightRed, colors.magenta,main.globals['selectedYear'],colors.brightRed, colors.magenta,main.globals['selectedMonth'])
+	print(textJunction)

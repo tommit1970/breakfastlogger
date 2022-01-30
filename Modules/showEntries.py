@@ -23,7 +23,7 @@ def handleRangeShow(firstIndex, lastIndex, breakfastList):
 
 
 def showAll(breakfastList):
-	# smallFuncs.clearScreen()
+	smallFuncs.clearScreen()
 	counter = 0
 	for item in breakfastList:
 		# each item has a linefeed in the end
@@ -31,7 +31,7 @@ def showAll(breakfastList):
 		print(textJunction)
 		counter += 1
 	smallFuncs.printLines(3)
-	return False # loop
+	return False
 
 
 def showRange(breakfastList):
@@ -101,17 +101,20 @@ def showOne(breakfastList):
 				print(message) # notNumber or outOfRange
 
 def showEntriesMenu(breakfastList):
-	loop = True
-	while loop:
+	if len(breakfastList) != 0:
+		loop = True
+		while loop:
 
-		print('Do you want to show (a)ll, (r)ange or (1) entry? (x to abort)')
-		userChoice = input()
-		if userChoice == 'a':
-			loop = showAll(breakfastList)
-		elif userChoice == 'r':
-			loop = showRange(breakfastList)
-		elif userChoice == '1':
-			loop = showOne(breakfastList)
-		elif userChoice == 'x':
-			loop = False
+			print('Do you want to show (a)ll, (r)ange or (1) entry? (x to abort)')
+			userChoice = input()
+			if userChoice == 'a':
+				loop = showAll(breakfastList)
+			elif userChoice == 'r':
+				loop = showRange(breakfastList)
+			elif userChoice == '1':
+				loop = showOne(breakfastList)
+			elif userChoice == 'x':
+				loop = False
+	else:
+		smallFuncs.nothingToShow()
 

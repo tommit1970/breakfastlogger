@@ -1,7 +1,4 @@
-2022 - 01 - 01 -> Lefse
-2022 - 01 - 01 -> Kake
-2022 - 01 - 01 -> Hysesuppe
-2022 - 01 - 01 -> Makaroni
+2022 - 01 - 01 -> Havregrøt
 2022 - 01 - 02 -> Havregrøt
 2022 - 01 - 03 -> Havregrøt
 2022 - 01 - 04 -> Havregrøt
@@ -27,3 +24,7 @@
 2022 - 01 - 24 -> Havregrøt
 2022 - 01 - 25 -> Havregrøt
 2022 - 01 - 26 -> Havregrøt
+2022 - 01 - 27 -> Havregrøt
+2022 - 01 - 28 -> Havregrøt
+2022 - 01 - 29 -> Egg, kaviar, brød og yoghurt
+2022 - 01 - 30 -> Egg, kaviar, brød og bringebæsyltetøy

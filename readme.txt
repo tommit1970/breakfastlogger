@@ -11,16 +11,22 @@ See LastPass - GitHub - notes! I need to use this for a while to get used to it.
 
 Currently in Progress:
 ----------------------
-- monthly structure, 'january', 'february', etc. on 'Show Recordings'
+
 
 
 
 Thoughts and ideas for change:
 ------------------------------
+- it seems like python is saving .txt-files in western 1252 encoding
+- exit out of setTimeFocus (x to abort)
+- chech input in setTimeFocus, Year must be a number between 2000 and 2100, and Month 1-12
 - ask for date on 'Show One Recording', use time as a structure for saving data
 - Clean Module-structure
 - Hash the password
 - improve globals['mainMenu']['inputRecs']['keyNum'/'funcToCall']
+
+Errors:
+-------
 
 
 -----------------------------------------------------------------------
@@ -35,7 +41,10 @@ Not Gited
 
 
 Gited
-2022/01/24-2022/01/??: Logfile for changes - metalogfile, # record new entries (Datetime,New,Item), # record edited entries - prev and new (Datetime,Edited From Old to New), # record deleted entries (Datetime,Removed,Item), # log date of change to each change or set of change
+2022/01/30-2022/01/30: Input recording is possible when focus is in old month (error)
+2022/01/27-2022/01/29: Yearly and Monthly file structure(Automatic, Done), '2022' 'january'=> 01, 'february', etc. on 'Show Recordings', # fileHandling.py => check if ./DataFolder/<year>/<month>/breakfastDataFile.txt exists or create it in folder system (Done), # Inform user in menu what month is focused on (done)
+2022/01/26-2022/01/26: Note in README.md that break.py is the main-file
+2022/01/24-2022/01/26: Logfile for changes - metalogfile, # record new entries (Datetime,New,Item), # record edited entries - prev and new (Datetime,Edited From Old to New), # record deleted entries (Datetime,Removed,Item), # log date of change to each change or set of change
 2022/01/23-2022/01/23: Make a numcheck and rangecheck function inside smallFunctions.py, and make the code in showEntries.py,editEntries.py and deleteEntries.py cleaner
 2022/01/22-2022/01/22: Edit recordings when with admin authorities
 2022/01/21-2022/01/21: Make show range
