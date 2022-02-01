@@ -23,7 +23,7 @@ def handleRangeShow(firstIndex, lastIndex, breakfastList):
 
 
 def showAll(breakfastList):
-	smallFuncs.clearScreen()
+	# smallFuncs.clearScreen()
 	counter = 0
 	for item in breakfastList:
 		# each item has a linefeed in the end

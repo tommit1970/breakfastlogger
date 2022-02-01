@@ -5,7 +5,7 @@ Removed
 2022 - 01 - 01 -> Hysesuppe
 Wed Jan 26 13:23:39 2022
 New
-2022 - 01 - 26 -> Havregrøt
+2022 - 01 - 26 -> HavregrÃ¸t
 Wed Jan 26 13:24:43 2022
 Edited
 From
@@ -20,22 +20,22 @@ to
 2022 - 01 - 01 -> Lefse
 Wed Jan 26 13:26:46 2022
 New
-2022 - 01 - 26 -> Havregrøt
+2022 - 01 - 26 -> HavregrÃ¸t
 Thu Jan 27 21:53:43 2022
 New
-2022 - 01 - 27 -> Havregrøt
+2022 - 01 - 27 -> HavregrÃ¸t
 Fri Jan 28 14:59:09 2022
 New
-2022 - 01 - 28 -> Havregrøt
+2022 - 01 - 28 -> HavregrÃ¸t
 Fri Jan 28 15:33:36 2022
 New
 2022 - 01 - 28 -> asdf
 Fri Jan 28 15:50:34 2022
 New
-2022 - 01 - 28 -> Havregrøt
+2022 - 01 - 28 -> HavregrÃ¸t
 Fri Jan 28 15:52:38 2022
 New
-2022 - 01 - 28 -> Havregrøt
+2022 - 01 - 28 -> HavregrÃ¸t
 Fri Jan 28 15:58:10 2022
 New
 2022 - 01 - 28 -> z
@@ -44,13 +44,13 @@ Removed
 2022 - 01 - 28 -> z
 Fri Jan 28 16:00:11 2022
 New
-2022 - 01 - 28 -> Havregrøt
+2022 - 01 - 28 -> HavregrÃ¸t
 Sat Jan 29 10:06:29 2022
 New
-2022 - 01 - 29 -> Egg, kaviar, brød og yoghurt
+2022 - 01 - 29 -> Egg, kaviar, brÃ¸d og yoghurt
 Sun Jan 30 13:02:01 2022
 New
-2022 - 01 - 30 -> Egg, kaviar, brød og brøngeb?syltet?y
+2022 - 01 - 30 -> Egg, kaviar, brÃ¸d og bringebÃ¦rsyltetÃ¸y
 Sun Jan 30 15:07:32 2022
 New
 2022 - 01 - 30 -> asdf
@@ -80,15 +80,15 @@ Removed
 Sun Jan 30 15:21:07 2022
 Edited
 From
-2021 - 12 - 31 -> Egg, kaviar, brød og yoghurt
+2021 - 12 - 31 -> Egg, kaviar, brÃ¸d og yoghurt
 to
-2021 - 12 - 31 -> Egg, kaviar, brød og knekkebrød
+2021 - 12 - 31 -> Egg, kaviar, brÃ¸d og knekkebrÃ¸d
 Sun Jan 30 15:24:24 2022
 Edited
 From
-2021 - 12 - 31 -> Egg, kaviar, brød og knekkebrød
+2021 - 12 - 31 -> Egg, kaviar, brÃ¸d og knekkebrÃ¸d
 to
-2021 - 12 - 31 -> Egg, kaviar, brød og knekkebrød
+2021 - 12 - 31 -> Egg, kaviar, brÃ¸d og knekkebrÃ¸d
 Sun Jan 30 15:49:40 2022
 New
 2022 - 01 - 30 -> Gresk
@@ -97,7 +97,7 @@ New
 2022 - 01 - 30 -> Hyse
 Sun Jan 30 15:53:55 2022
 New
-2022 - 01 - 30 -> øøø
+2022 - 01 - 30 -> Ã¸Ã¸Ã¸
 Sun Jan 30 16:15:42 2022
 Removed
 2022 - 01 - 30 -> Hyse
@@ -114,4 +114,28 @@ Edited
 From
 2022 - 01 - 01 -> Makaroni
 to
-2022 - 01 - 01 -> Havregrøt
+2022 - 01 - 01 -> HavregrÃ¸t
+Mon Jan 31 22:01:46 2022
+New
+2022 - 01 - 31 -> HavregrÃ¸t
+Tue Feb  1 21:50:42 2022
+New
+2022 - 02 - 01 -> HavregrÃ¸t
+Tue Feb  1 22:05:18 2022
+Edited
+From
+2022 - 01 - 31 -> HavregrÃ¸t
+to
+2022 - 01 - 31 -> HavregrÃ¸t
+Tue Feb  1 22:05:46 2022
+Edited
+From
+2022 - 01 - 31 -> HavregrÃ¸t
+to
+2022 - 01 - 31 -> Havregr
+Tue Feb  1 22:05:59 2022
+Edited
+From
+2022 - 01 - 31 -> Havregr
+to
+2022 - 01 - 31 -> HavregrÃ¸t

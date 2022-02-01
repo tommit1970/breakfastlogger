@@ -25,7 +25,7 @@ def fillBreakfastList(year, month):
 		mkdir(directory)
 
 		# create the file
-		fp = open(file, 'x')
+		fp = open(file, 'x', encoding='utf-8')
 		fp.close()
 		print(file +' was created')
 	main.globals['pathToCurrentFile'] = file
@@ -36,7 +36,7 @@ def readFile(fileName):
 	if fileName == "./DataFolder/today.txt":
 		print('Loaded today.txt')
 
-	file = open(fileName, 'r')
+	file = open(fileName, 'r', encoding='utf-8')
 	content = file.read().splitlines() # from lines in a file to list
 
 	file.close()
@@ -51,12 +51,12 @@ def writeFile(changeType,changes):
 	if file_exists:
 		print(file + ' exists')
 	else:
-		fp = open(file, 'x')
+		fp = open(file, 'x', encoding='utf-8')
 		fp.close()
 		print(file +' was created')
 
 	# prepare to write to file
-	breakfastDataFile = open(main.globals['pathToCurrentFile'],'w')
+	breakfastDataFile = open(main.globals['pathToCurrentFile'],'w', encoding='utf-8')
 	breakfastListLength = len(main.breakfastList)
 	textCollection = ""
 	for i in range(0,breakfastListLength):
@@ -72,13 +72,13 @@ def writeFile(changeType,changes):
 	# 
 	if changeType == "New":
 		print("Changing ./DataFolder/today.txt")
-		todayFile = open('./DataFolder/today.txt', 'w')
+		todayFile = open('./DataFolder/today.txt', 'w', encoding='utf-8')
 		todayContent = changes.split('->')[0].strip()
 		todayFile.write(todayContent)
 		todayFile.close()
 
 	# log changes with date to log.txt
-	logActivityFile = open('log.txt','a') # a = append
+	logActivityFile = open('log.txt','a', encoding='utf-8') # a = append
 	todayString = datetime.datetime.now()
 	todayString = todayString.strftime('%c')
 	changes = todayString + '\n' + changeType + '\n' + changes

@@ -17,7 +17,7 @@ Currently in Progress:
 
 Thoughts and ideas for change:
 ------------------------------
-- it seems like python is saving .txt-files in western 1252 encoding
+
 - exit out of setTimeFocus (x to abort)
 - chech input in setTimeFocus, Year must be a number between 2000 and 2100, and Month 1-12
 - ask for date on 'Show One Recording', use time as a structure for saving data
@@ -41,6 +41,7 @@ Not Gited
 
 
 Gited
+2022/01/31-2022/02/01: It seems like python is saving .txt-files in western 1252 encoding as default so I did something like: # changed all the .txt-files to utf-8 encoding, # changed all the fileHandling.py to open(file, 'rxw', encoding="utf-8") both reading and saving because this worked with ft.py and test.txt
 2022/01/30-2022/01/30: Input recording is possible when focus is in old month (error)
 2022/01/27-2022/01/29: Yearly and Monthly file structure(Automatic, Done), '2022' 'january'=> 01, 'february', etc. on 'Show Recordings', # fileHandling.py => check if ./DataFolder/<year>/<month>/breakfastDataFile.txt exists or create it in folder system (Done), # Inform user in menu what month is focused on (done)
 2022/01/26-2022/01/26: Note in README.md that break.py is the main-file
