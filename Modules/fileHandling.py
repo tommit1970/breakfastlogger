@@ -21,7 +21,12 @@ def fillBreakfastList(year, month):
 	if file_exists:
 		print(file + ' exists')
 	else:
-		# make directory
+		# check directory year
+		yearPath = './DataFolder/{}'.format(year)
+		if not path.isdir(yearPath):
+			# if no year make year
+			mkdir(yearPath)
+		# make directory month
 		mkdir(directory)
 
 		# create the file
