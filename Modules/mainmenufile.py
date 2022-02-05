@@ -4,7 +4,7 @@ import __main__ as main
 
 
 def showMenuRegular():
-	textJunction = '{}BREAKFAST - LOGGER {}Year: {}{} {}Month: {}{}\n'.format(colors.cyan,colors.magenta,colors.green,main.globals['selectedYear'],colors.magenta, colors.green,main.globals['selectedMonth'])
+	textJunction = '{}BREAKFAST - LOGGER'.format(colors.cyan)
 	print(textJunction)
 	textJunction = '{}What do you want to do?'.format(colors.green)
 	print(textJunction)
@@ -39,7 +39,7 @@ def userAction():
 	textJunction = '{} {} {} - AdminAccess: {}{}{}'.format(colors.bgRed, main.globals['mainMenu']['adminAccess'][0], colors.bgLightGrey, colors.magenta,main.globals['adminModeOn'],colors.white)
 	print(textJunction)
 
-	textJunction = '{} {} {} - Set Time Focus'.format(colors.bgRed, main.globals['mainMenu']['timeFocus'][0], colors.bgLightGrey)
+	textJunction = '{} {} {} - Set Time Focus  {}Year: {}{} {}Month: {}{}{}'.format(colors.bgRed,main.globals['mainMenu']['timeFocus'][0],colors.bgLightGrey,colors.magenta,colors.green,main.globals['selectedYear'],colors.magenta, colors.green,main.globals['selectedMonth'],colors.white)
 	print(textJunction)
 
 	textJunction = '{} {} {} - Help'.format(colors.bgRed, main.globals['mainMenu']['help'], colors.bgLightGrey)

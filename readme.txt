@@ -11,26 +11,29 @@ See LastPass - GitHub - notes! I need to use this for a while to get used to it.
 
 Currently in Progress:
 ----------------------
+- 2 and 02 is not the same, check DataFolder, the ease of reading should be mentioned, and some errors(saving in wrong file), simplify file-structure(filename = 2022-02_breakfastDataFile.txt), modifications and removing errors
+
+Step 1:
+	# Overview of all the files involved in the file-structure change
+	# Do the change, step by step in another branch of git
+	# Check if all is working
 
 
 
 Thoughts and ideas for change:
 ------------------------------
-- Set Time Focus (Current year: 2022 Current month: 2)
-- ask for date on 'Show One Recording', use time as a structure for saving data
 - Clean Module-structure
 - Hash the password
-- improve globals['mainMenu']['inputRecs']['keyNum'/'funcToCall']
 
 Errors:
 -------
-
 
 -----------------------------------------------------------------------
 		H I S T O R Y   O F   C H A N G E S / I M P R O V E M E N T S
 StartDate	EndDate				Change
 -----------------------------------------------------------------------
 Not Gited
+2022/02/04-2022/02/04: Layout: Set Time Focus (Current year: 2022 Current month: 2), remove from top
 
 
 
@@ -39,7 +42,8 @@ Not Gited
 
 Gited
 2022/02/02-2022/02/02: Exit out of setTimeFocus (x to abort)
-2022/02/02-2022/02/02: Chech input in setTimeFocus, Year must be a number between 2000 and 2100, and Month 1-12, 2022/02/02-2022/02/02: Fixed mkdir(year) before mkdir(month) if no year is created, mkdir() can not create two directories at once
+2022/02/02-2022/02/02: Chech input in setTimeFocus, Year must be a number between 2000 and 2100, and Month 1-12
+2022/02/02-2022/02/02: Fixed mkdir(year) before mkdir(month) if no year is created, mkdir() can not create two directories at once
 2022/01/31-2022/02/01: It seems like python is saving .txt-files in western 1252 encoding as default so I did something like: # changed all the .txt-files to utf-8 encoding, # changed all the fileHandling.py to open(file, 'rxw', encoding="utf-8") both reading and saving because this worked with ft.py and test.txt
 2022/01/30-2022/01/30: Input recording is possible when focus is in old month (error)
 2022/01/27-2022/01/29: Yearly and Monthly file structure(Automatic, Done), '2022' 'january'=> 01, 'february', etc. on 'Show Recordings', # fileHandling.py => check if ./DataFolder/<year>/<month>/breakfastDataFile.txt exists or create it in folder system (Done), # Inform user in menu what month is focused on (done)
