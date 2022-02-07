@@ -11,29 +11,24 @@ See LastPass - GitHub - notes! I need to use this for a while to get used to it.
 
 Currently in Progress:
 ----------------------
-- 2 and 02 is not the same, check DataFolder, the ease of reading should be mentioned, and some errors(saving in wrong file), simplify file-structure(filename = 2022-02_breakfastDataFile.txt), modifications and removing errors
-
-Step 1:
-	# Overview of all the files involved in the file-structure change
-	# Do the change, step by step in another branch of git
-	# Check if all is working
 
 
 
 Thoughts and ideas for change:
 ------------------------------
+- if breakfastList > 15 make a pause with <enter> to continue
+- if today.txt does not exist is not checked
 - Clean Module-structure
 - Hash the password
 
 Errors:
 -------
-
+- When you are in another year and month than the current year and month, registering is still possible, but it will register in current year and month
 -----------------------------------------------------------------------
 		H I S T O R Y   O F   C H A N G E S / I M P R O V E M E N T S
 StartDate	EndDate				Change
 -----------------------------------------------------------------------
 Not Gited
-2022/02/04-2022/02/04: Layout: Set Time Focus (Current year: 2022 Current month: 2), remove from top
 
 
 
@@ -41,6 +36,9 @@ Not Gited
 
 
 Gited
+2022/02/05-2022/02/07: Clean writeFile, subFunctions created
+2022/02/05-2022/02/07: Fix ./DataFolder-issue with 2 and 02, simplify file-structure(filename = 2022-02_breakfastDataFile.txt), walked through all files involved, step-by-step really slowly checking and testing on the way
+2022/02/04-2022/02/04: Layout: Set Time Focus (Current year: 2022 Current month: 2), remove from top
 2022/02/02-2022/02/02: Exit out of setTimeFocus (x to abort)
 2022/02/02-2022/02/02: Chech input in setTimeFocus, Year must be a number between 2000 and 2100, and Month 1-12
 2022/02/02-2022/02/02: Fixed mkdir(year) before mkdir(month) if no year is created, mkdir() can not create two directories at once

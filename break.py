@@ -2,7 +2,7 @@
 import importlib
 import sys
 from datetime import date
-from Modules.mainmenufile import userAction, nonOfOptionsChosen
+from Modules.mainmenufile import userOptions, nonOfOptionsChosen
 from Modules.newEntry import breakfastLogging
 from Modules.showEntries import showEntriesMenu
 from Modules.deleteEntries import deleteEntriesMenu
@@ -22,9 +22,12 @@ from Modules.togglers import toggleDateStamp, toggleForcedOnePerDay
 globals = {	'youWantDateStamp':True,
 			'oneRecPerDayForced':True,
 			'adminModeOn':False,
+			'pathToPresentFile':'',
+			'presentYear':'',
+			'presentMonth':'',
 			'pathToCurrentFile':'',
-			'selectedMonth':'',
 			'selectedYear':'',
+			'selectedMonth':'',
 			'mainMenu':{'inputRecs':['1', breakfastLogging],
 						'showRecs':['2', showEntriesMenu],
 						'editRecs':['3', editOne],
@@ -43,15 +46,16 @@ smallFuncs.clearScreen()
 print(sys.getdefaultencoding())
 
 # populate breakfastList
-year = globals['selectedYear'] = date.today().strftime('%Y')
-month = globals['selectedMonth'] = date.today().strftime('%m')
-breakfastList = fillBreakfastList(year, month)
+year = globals['selectedYear'] = globals['presentYear'] = date.today().strftime('%Y')
+month = globals['selectedMonth'] = globals['presentMonth'] = date.today().strftime('%m')
+globals['pathToPresentFile'] = './DataFolder/{}/{}-{}_breakfastDataFile.txt'.format(year,year,month)
+breakfastList = fillBreakfastList(year, month) # globals['pathToCurrentFile'] will be filled here
 
 # MAIN LOOP
 loop = True
 while loop:
 	# global youWantDateStamp
-	userChoice = userAction() # menu
+	userChoice = userOptions() # menu
 	# Needs user input checking
 	if userChoice == globals['mainMenu']['inputRecs'][0]:
 		globals['mainMenu']['inputRecs'][1](breakfastList, globals['oneRecPerDayForced'], globals['youWantDateStamp'])

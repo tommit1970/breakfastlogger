@@ -23,8 +23,13 @@ def setTimeFocus():
 						userChoice = int(userChoice)
 						if userChoice >= 1 and userChoice <= 12:
 							main.globals['selectedYear'] = year
-							month = main.globals['selectedMonth'] = str(userChoice)
-							fileLoc = main.globals['pathToCurrentFile'] = './DataFolder/{}/{}/breakfastDataFile.txt'.format(year,month)
+							month = userChoice
+							if month < 10:
+								month = '0'+str(month)
+							else:
+								month = str(month)
+							main.globals['selectedMonth'] = month
+							fileLoc = main.globals['pathToCurrentFile'] = './DataFolder/{}/{}-{}_breakfastDataFile.txt'.format(year,year,month)
 							print(fileLoc)
 							main.breakfastList = fillBreakfastList(year, month)
 							return
