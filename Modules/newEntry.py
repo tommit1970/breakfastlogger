@@ -16,13 +16,10 @@ def breakfastLogging(breakfastList, oneRegPerDayForced, youWantDateStamp):
 	else:
 		print('What did you eat for breakfast today? (x to abort)\n')
 		breakfastData = input()
-		if breakfastData == 'x':
+		if breakfastData == 'x': # abort
 			print('No data recorded')
 		else:
 			if youWantDateStamp:
 				breakfastData = todayString + ' -> ' + breakfastData
-			breakfastList.append(breakfastData)
-			writeFile("New",breakfastData) # from list to lines in a file
-			print('{}Recorded:{}'.format(colors.magenta, colors.white),end="")
-			print(breakfastData, end="\n\n")
-			# write to today.txt
+			writeFile("New",breakfastData) # save to file
+			print('\n{}Recorded:{}{}\n'.format(colors.magenta, colors.white,breakfastData))

@@ -31,7 +31,7 @@ def nonOfOptionsChosen():
 	print(textJunction)
 
 # main_menu_selector
-def userAction():
+def userOptions():
 	showMenuRegular()
 	if main.globals['adminModeOn']:
 		showMenuAdmin()
