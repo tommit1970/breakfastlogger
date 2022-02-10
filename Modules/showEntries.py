@@ -1,6 +1,7 @@
 import Modules.smallFunctions as smallFuncs
 # from Modules.smallFunctions import numberAndRangeCheck
 import Modules.colors as colors
+import keyboard
 
 #Colors ANSI break codes - See file: ansi_colors.txt (only local)
 
@@ -11,13 +12,40 @@ def handleRangeShow(firstIndex, lastIndex, breakfastList):
 		firstIndex = lastIndex
 		lastIndex = temp
 
+	needToSplit = False
+	splitAtFifteen = 15
+	if lastIndex - firstIndex > 15:
+		needToSplit = True
+
 	print('Range is {} to {}'.format(firstIndex, lastIndex))
 	counter = firstIndex
-	for item in range(firstIndex,lastIndex+1):
-		# each item has a linefeed in the end
-		textJunction = '({}{}{}) {}'.format(colors.brightRed,counter,colors.white,breakfastList[item])
-		print(textJunction)
-		counter += 1
+
+	first = temp = last = 0
+
+	if needToSplit:
+		for run in range(2):
+			if run == 0:
+				first = firstIndex
+				last = firstIndex + splitAtFifteen
+			else:
+				print('press <space> to continue')
+				keyboard.wait('space')
+				first = last
+				last = lastIndex + 1
+
+			for item in range(first,last):
+				# each item has a linefeed in the end
+				textJunction = '({}{}{}) {}'.format(colors.brightRed,counter,colors.white,breakfastList[item])
+				print(textJunction)
+				counter += 1
+	else:
+		for item in range(firstIndex,lastIndex+1):
+			# each item has a linefeed in the end
+			textJunction = '({}{}{}) {}'.format(colors.brightRed,counter,colors.white,breakfastList[item])
+			print(textJunction)
+			counter += 1
+
+
 	smallFuncs.printLines(3)
 	return False # loop
 
@@ -25,11 +53,39 @@ def handleRangeShow(firstIndex, lastIndex, breakfastList):
 def showAll(breakfastList):
 	# smallFuncs.clearScreen()
 	counter = 0
-	for item in breakfastList:
-		# each item has a linefeed in the end
-		textJunction = '({}{}{}) {}'.format(colors.brightRed,counter,colors.white,item)
-		print(textJunction)
-		counter += 1
+
+	length = len(breakfastList)
+	
+	needToSplit = False
+
+	if length > 15:
+		needToSplit = True
+
+	if needToSplit:
+		# split the list	
+		for run in range(2):
+			if run == 0:
+				first = 0
+				last = 15
+			else:
+				print('press <space> to continue')
+				keyboard.wait('space')
+				first = 15
+				last = length
+
+			for index in range(first, last):
+				# each item has a linefeed in the end
+				textJunction = '({}{}{}) {}'.format(colors.brightRed,counter,colors.white,breakfastList[index])
+				print(textJunction)
+				counter += 1
+	else:
+		# show all
+		for item in breakfastList:
+			# each item has a linefeed in the end
+			textJunction = '({}{}{}) {}'.format(colors.brightRed,counter,colors.white,item)
+			print(textJunction)
+			counter += 1
+
 	smallFuncs.printLines(3)
 	return False
 

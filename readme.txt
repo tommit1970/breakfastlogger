@@ -16,10 +16,10 @@ Currently in Progress:
 
 Thoughts and ideas for change:
 ------------------------------
-- if breakfastList > 15 make a pause with <enter> to continue
-- if today.txt does not exist is not checked
+- if the file log.txt becomes too big save first about 100 lines to another archive
+- set new password
+- a check if today.txt does exist
 - Clean Module-structure
-- Hash the password
 
 Errors:
 -------
@@ -36,6 +36,9 @@ Not Gited
 
 
 Gited
+2022/02/09-2022/02/10: Hash the password - trained with hashboy.py and I learned that hashed passwords can be compared within the bcrypt-module
+2022/02/09-2022/02/10: Mongodb and python
+2022/02/08-2022/02/08: If breakfastList > 15 make a pause with <enter> to continue
 2022/02/05-2022/02/07: Clean writeFile, subFunctions created
 2022/02/05-2022/02/07: Fix ./DataFolder-issue with 2 and 02, simplify file-structure(filename = 2022-02_breakfastDataFile.txt), walked through all files involved, step-by-step really slowly checking and testing on the way
 2022/02/04-2022/02/04: Layout: Set Time Focus (Current year: 2022 Current month: 2), remove from top
