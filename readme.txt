@@ -11,24 +11,26 @@ See LastPass - GitHub - notes! I need to use this for a while to get used to it.
 
 Currently in Progress:
 ----------------------
-
+2022/02/12-2022/02/12: Check the freshness of the password, check expire date, must create new password, compare today with creation day of password, if password has expired demand new password, if user does nothing no access to admin priviliges
 
 
 Thoughts and ideas for change:
 ------------------------------
+- check for mongoDB scheme, make userName unique
+- if no local-mongoDB go to cloud-mongoDB, syncronize the two
 - if the file log.txt becomes too big save first about 100 lines to another archive
-- set new password
 - a check if today.txt does exist
 - Clean Module-structure
 
 Errors:
 -------
-- When you are in another year and month than the current year and month, registering is still possible, but it will register in current year and month
 -----------------------------------------------------------------------
 		H I S T O R Y   O F   C H A N G E S / I M P R O V E M E N T S
 StartDate	EndDate				Change
 -----------------------------------------------------------------------
 Not Gited
+2022/02/11-2022/02/11: Make new password(include in globals,include in break.py - if else - list,include in menu,password-handling in admin.py)
+2022/02/05-2022/02/08: When you are in another year and month than the current year and month, registering is still possible, but it will register in current year and month
 
 
 

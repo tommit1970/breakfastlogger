@@ -24,6 +24,8 @@ def showMenuAdmin():
 	print(textJunction)
 	textJunction = '{} {} {} - Toggle ForcedOnePerDay - Now: {}{}{}'.format(colors.bgRed, main.globals['mainMenu']['oneRecPerDayForced'][0], colors.bgLightGrey,colors.magenta,main.globals['oneRecPerDayForced'],colors.white)
 	print(textJunction)
+	textJunction = '{} {} {} - New Password'.format(colors.bgRed, main.globals['mainMenu']['newPassword'][0], colors.bgLightGrey)
+	print(textJunction)
 
 
 def nonOfOptionsChosen():

@@ -9,7 +9,7 @@ from Modules.deleteEntries import deleteEntriesMenu
 from Modules.editEntries import editOne
 import Modules.smallFunctions as smallFuncs
 from Modules.fileHandling import fillBreakfastList
-from Modules.admin import toggleAdminMode
+from Modules.admin import toggleAdminMode, newPassword
 from Modules.timeFocus import setTimeFocus
 from Modules.togglers import toggleDateStamp, toggleForcedOnePerDay
 
@@ -35,6 +35,7 @@ globals = {	'youWantDateStamp':True,
 						'dateStampToggle':['d', toggleDateStamp],
 						'oneRecPerDayForced':['f', toggleForcedOnePerDay],
 						'adminAccess':['a', toggleAdminMode],
+						'newPassword':['p', newPassword],
 						'timeFocus':['s',setTimeFocus],
 						'help':'?',
 						'exit':'x'}
@@ -71,6 +72,8 @@ while loop:
 		globals['mainMenu']['oneRecPerDayForced'][1]() # toggleForcedOnePerDay
 	elif userChoice == globals['mainMenu']['adminAccess'][0]:
 		globals['mainMenu']['adminAccess'][1]() # toggleAdminMode
+	elif userChoice == globals['mainMenu']['newPassword'][0]:
+		globals['mainMenu']['newPassword'][1]() # toggleAdminMode
 	elif userChoice == globals['mainMenu']['timeFocus'][0]:
 		globals['mainMenu']['timeFocus'][1]()
 	elif userChoice == globals['mainMenu']['help']:
