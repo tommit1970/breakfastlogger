@@ -12,6 +12,7 @@ from Modules.fileHandling import fillBreakfastList
 from Modules.admin import toggleAdminMode, newPassword
 from Modules.timeFocus import setTimeFocus
 from Modules.togglers import toggleDateStamp, toggleForcedOnePerDay
+from Modules.dbHandling import usersMenu
 
 ####################################
 # start of app
@@ -35,6 +36,7 @@ globals = {	'youWantDateStamp':True,
 						'dateStampToggle':['d', toggleDateStamp],
 						'oneRecPerDayForced':['f', toggleForcedOnePerDay],
 						'adminAccess':['a', toggleAdminMode],
+						'viewUsers':['u', usersMenu],
 						'newPassword':['p', newPassword],
 						'timeFocus':['s',setTimeFocus],
 						'help':'?',
@@ -72,7 +74,9 @@ while loop:
 		globals['mainMenu']['oneRecPerDayForced'][1]() # toggleForcedOnePerDay
 	elif userChoice == globals['mainMenu']['adminAccess'][0]:
 		globals['mainMenu']['adminAccess'][1]() # toggleAdminMode
-	elif userChoice == globals['mainMenu']['newPassword'][0]:
+	elif userChoice == globals['mainMenu']['viewUsers'][0] and globals['adminModeOn']:
+		globals['mainMenu']['viewUsers'][1]() # toggleAdminMode
+	elif userChoice == globals['mainMenu']['newPassword'][0] and globals['adminModeOn']:
 		globals['mainMenu']['newPassword'][1]() # toggleAdminMode
 	elif userChoice == globals['mainMenu']['timeFocus'][0]:
 		globals['mainMenu']['timeFocus'][1]()

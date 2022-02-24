@@ -11,12 +11,15 @@ See LastPass - GitHub - notes! I need to use this for a while to get used to it.
 
 Currently in Progress:
 ----------------------
-2022/02/12-2022/02/12: Check the freshness of the password, check expire date, must create new password, compare today with creation day of password, if password has expired demand new password, if user does nothing no access to admin priviliges
+
 
 
 Thoughts and ideas for change:
 ------------------------------
+- split number and range check
+- make it simple, for christ sake, this mongoDB stuff is killing me
 - check for mongoDB scheme, make userName unique
+	#	id - unique, userName - unique, password - hashed, created - datetime
 - if no local-mongoDB go to cloud-mongoDB, syncronize the two
 - if the file log.txt becomes too big save first about 100 lines to another archive
 - a check if today.txt does exist
@@ -29,8 +32,6 @@ Errors:
 StartDate	EndDate				Change
 -----------------------------------------------------------------------
 Not Gited
-2022/02/11-2022/02/11: Make new password(include in globals,include in break.py - if else - list,include in menu,password-handling in admin.py)
-2022/02/05-2022/02/08: When you are in another year and month than the current year and month, registering is still possible, but it will register in current year and month
 
 
 
@@ -38,6 +39,12 @@ Not Gited
 
 
 Gited
+2022/02/21-2022/02/24: Manage users from admin, create, view, modify or delete userdata
+2022/02/17-2022/02/17: Save passwords in binary format, it worked
+2022/02/17-2022/02/17: Make "Aborted"(x to abort) red on edit
+2022/02/12-2022/02/12: Check the freshness of the password, check expire date, must create new password, compare today with creation day of password, if password has expired demand new password, if user does nothing give no access to admin priviliges
+2022/02/11-2022/02/11: Make new password(include in globals,include in break.py - if else - list,include in menu,password-handling in admin.py)
+2022/02/05-2022/02/08: When you are in another year and month than the current year and month, registering is still possible, but it will register in current year and month
 2022/02/09-2022/02/10: Hash the password - trained with hashboy.py and I learned that hashed passwords can be compared within the bcrypt-module
 2022/02/09-2022/02/10: Mongodb and python
 2022/02/08-2022/02/08: If breakfastList > 15 make a pause with <enter> to continue

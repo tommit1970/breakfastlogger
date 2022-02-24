@@ -39,7 +39,7 @@ def editOne(breakfastList):
 		userChoice = input()
 		if userChoice == 'x':
 			loop = False
-			print('Aborted!!!')
+			print('{}\nEdit aborted!!!\n'.format(colors.brightRed))
 		else:
 			message = numberAndRangeCheck(breakfastList, userChoice)
 			if isinstance(message, bool):

@@ -36,3 +36,29 @@ def numberAndRangeCheck(breakfastList, inputValue):
 def nothingToShow():
 	textJunction = '{}No data recorded in Year: {}{}{} Month: {}{}'.format(colors.brightRed, colors.magenta,main.globals['selectedYear'],colors.brightRed, colors.magenta,main.globals['selectedMonth'])
 	print(textJunction)
+
+def abortedFeedback():
+	textJunction = '\n{}Aborted!\n'.format(colors.brightRed)
+	print(textJunction)
+
+def userNotFoundFeedback():
+	textJunction = '\n{}User not found!\n'.format(colors.brightRed)
+	print(textJunction)
+
+def userDataModifiedFeedback(type):
+	type = type.lower().capitalize()
+	textJunction = '\n{}{}{} was modified!\n'.format(colors.brightRed,type,colors.white)
+	print(textJunction)
+
+def userCreatedFeedback(user, now):
+	textJunction = '\n{}User {}{}{} was created: {}{}!\n'.format(colors.white, colors.green, user, colors.white, colors.cyan, now)
+	print(textJunction)
+
+def userDeletedFeedback(user, counter):
+	print('\nFound: ' + str(counter))
+	textJunction = '\n{}User {}{}{} was deleted!\n'.format(colors.white, colors.brightRed, user, colors.white)
+	print(textJunction)
+
+def userExistsFeedback(user):
+	textJunction = '\n{}User {}{}{} already exists!\n'.format(colors.white, colors.brightRed, user, colors.white)
+	print(textJunction)

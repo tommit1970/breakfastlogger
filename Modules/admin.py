@@ -5,7 +5,7 @@ from Modules.fileHandling import readFile
 import __main__ as main
 import Modules.colors as colors
 import getpass
-import logindata
+# import logindata
 
 
 
@@ -34,7 +34,7 @@ def mongoDB_handling(userName):
 
 	if counter != 0:
 		# print(findings['userPW'])
-		return [findings['userPW'],findings['created']]
+		return {'userPW':findings['userPW'],'created':findings['created'],'userName':findings['userName']}
 	return False
 
 
@@ -43,9 +43,8 @@ def askForCredentials():
 	userName = getpass.getpass('Username: ')
 	userPWD = getpass.getpass('Password: ').encode() # encode() for hash_compare
 	DBresult = mongoDB_handling(userName)
-	# print(DBresult)
 	if DBresult:
-		return {'p':userPWD, 'dbp':DBresult[0].encode(), 'created':DBresult[1]}
+		return {'p':userPWD, 'dbp':DBresult['userPW'], 'created':DBresult['created'],'userName':DBresult['userName']}
 	return False
 
 def toggleAdminMode():
@@ -62,17 +61,19 @@ def toggleAdminMode():
 			dayDiff = (today - userID['created']).days
 			# print(days_between(today, userID['created']))
 			if bcrypt.checkpw(userID['p'], userID['dbp']):
-				print('\n{}Access granted!{}\n'.format(colors.green,colors.white))
+				print('{}\nYour password was created: {}'.format(colors.cyan,userID['created']))
+				print('\n{}Access granted!{}'.format(colors.green,colors.white))
 				# password freshness check
 				if dayDiff > 3:
 					print('Password Creation Date was:')
 					print(userID['created'])
 					print('That is {} days ago!'.format(dayDiff))
 					print('You got to change your password!')
-					if newPassword(): # returns True if Acceptable
+					if newPassword(): # change password and returns True if Acceptable
 						main.globals['adminModeOn'] = True
 				else:
-					print('Password is fresh enough')
+					print('{}\nPassword is fresh enough\n'.format(colors.green))
+					main.globals['adminModeOn'] = True # give access
 			else:
 				print('\n{}Access denied 1 - wrong pass!\n'.format(colors.brightRed))
 		else:
@@ -101,8 +102,8 @@ def newPassword():
 					client = MongoClient('mongodb://localhost:27017/')
 					db = client['breakfastPW']
 					collection = db['pw']
-					hashedNewPW = bcrypt.hashpw(newPW.encode(), bcrypt.gensalt()).decode()
-					collection.update_one({'_id':4},{'$set':{'userPW':hashedNewPW, 'created':now}})
+					hashedNewPW = bcrypt.hashpw(newPW.encode(), bcrypt.gensalt())
+					collection.update_one({'userName':userID['userName']},{'$set':{'userPW':hashedNewPW, 'created':now}})
 					loop = False
 					print('Password Changed!')
 					client.close()
@@ -110,4 +111,6 @@ def newPassword():
 				else:
 					print('Password must be at least 5 characters long.'.format(colors.brightRed))
 	else:
-		print('\n{}Rejected!\n'.format(colors.brightRed))
+		print('\n{}Rejected! Privileges removed!\n'.format(colors.brightRed))
+		main.globals['adminModeOn'] = False # deny access, idiot
+		return False

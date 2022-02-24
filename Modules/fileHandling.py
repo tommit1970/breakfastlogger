@@ -2,6 +2,7 @@ import __main__ as main
 # import os
 import datetime
 from os import path, mkdir
+import Modules.colors as colors
 
 # emtpy file check
 def is_non_zero_file(fpath):  
@@ -97,12 +98,12 @@ def writeFile(changeType,changes):
 
 	# is it a 'New' entry?, if not - it is a timeFocus-change(edit/remove)
 	if changeType == "New":
-		print('Writing to PresentTimeFile')
+		print('{}Writing to PresentTimeFile'.format(colors.cyan))
 		file = main.globals['pathToPresentFile'] # pathToCurrentFile is irrelevant here
 		# fill breakfastList with present time list
 		main.breakfastList = fillBreakfastList(main.globals['presentYear'],main.globals['presentMonth'])
 		main.breakfastList.append(changes) # add to present breakfastList
-		print(main.breakfastList)
+		# print(main.breakfastList)
 	else:
 		print('Writing to SelectedTimeFile')
 		file = main.globals['pathToCurrentFile'] # pathToPresentFile is irrelevant here
@@ -128,15 +129,15 @@ def writeFile(changeType,changes):
 			textCollection = textCollection + main.breakfastList[i]
 
 	# write to file
-	print(textCollection)
+	# print(textCollection)
 	breakfastDataFile.write(textCollection)
 	breakfastDataFile.close()
 
 	# change back to selected breakfastList from <year>-<month>_breakfastDataFile.txt
 	if breakfastListChanged:
 		main.breakfastList = fillBreakfastList(main.globals['selectedYear'],main.globals['selectedMonth'])
-		print("Changed back to selected breakfastList")
-		print(main.breakfastList)
+		print("{}Changed back to selected breakfastList".format(colors.brightRed))
+		# print(main.breakfastList)
 
 
 
