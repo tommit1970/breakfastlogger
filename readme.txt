@@ -17,9 +17,7 @@ Currently in Progress:
 Thoughts and ideas for change:
 ------------------------------
 - split number and range check
-- make it simple, for christ sake, this mongoDB stuff is killing me
-- check for mongoDB scheme, make userName unique
-	#	id - unique, userName - unique, password - hashed, created - datetime
+- how to syncronize local mongoDB and cloud-mongoDB
 - if no local-mongoDB go to cloud-mongoDB, syncronize the two
 - if the file log.txt becomes too big save first about 100 lines to another archive
 - a check if today.txt does exist
@@ -39,6 +37,9 @@ Not Gited
 
 
 Gited
+2022/02/27-2022/02/27: Colors in new password - module
+2022/02/27-2022/02/27: Make sure that new password is different from old after password expire
+2022/02/23-2022/02/26: Flush output after keyboard-press (keyboard-module) to avoid (space) in menu - Found it: keyboard.wait('space', suppress = True)
 2022/02/21-2022/02/24: Manage users from admin, create, view, modify or delete userdata
 2022/02/17-2022/02/17: Save passwords in binary format, it worked
 2022/02/17-2022/02/17: Make "Aborted"(x to abort) red on edit

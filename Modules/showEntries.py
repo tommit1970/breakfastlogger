@@ -29,7 +29,7 @@ def handleRangeShow(firstIndex, lastIndex, breakfastList):
 				last = firstIndex + splitAtFifteen
 			else:
 				print('press <space> to continue')
-				keyboard.wait('space')
+				keyboard.wait('space', suppress = True)
 				first = last
 				last = lastIndex + 1
 
@@ -69,7 +69,7 @@ def showAll(breakfastList):
 				last = 15
 			else:
 				print('press <space> to continue')
-				keyboard.wait('space')
+				keyboard.wait('space', suppress = True)
 				first = 15
 				last = length
 
