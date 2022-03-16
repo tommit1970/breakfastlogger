@@ -50,12 +50,11 @@ def userDataModifiedFeedback(type):
 	textJunction = '\n{}{}{} was modified!\n'.format(colors.brightRed,type,colors.white)
 	print(textJunction)
 
-def userCreatedFeedback(user, now):
-	textJunction = '\n{}User {}{}{} was created: {}{}!\n'.format(colors.white, colors.green, user, colors.white, colors.cyan, now)
+def userCreatedFeedback(user):
+	textJunction = '\n{}User {}{}{} was created!\n'.format(colors.white, colors.green, user, colors.white)
 	print(textJunction)
 
-def userDeletedFeedback(user, counter):
-	print('\nFound: ' + str(counter))
+def userDeletedFeedback(user):
 	textJunction = '\n{}User {}{}{} was deleted!\n'.format(colors.white, colors.brightRed, user, colors.white)
 	print(textJunction)
 

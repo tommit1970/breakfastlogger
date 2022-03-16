@@ -17,7 +17,7 @@ def days_between(d1, d2):
 # Here you ask for admin access
 
 def mongoDB_handling(userName):
-	client = MongoClient('mongodb://localhost:27017/')
+	client = MongoClient(main.globals['dbAddressActive'])
 	db = client['breakfastPW']
 	collection = db['pw']
 	result = collection.find({'userName':userName})
@@ -69,7 +69,8 @@ def toggleAdminMode():
 					print(userID['created'])
 					print('That is {} days ago!'.format(dayDiff))
 					print('You got to change your password!')
-					if newPassword(): # change password and returns True if Acceptable
+					if newPassword():
+						# change password and returns True if Acceptable
 						main.globals['adminModeOn'] = True
 				else:
 					print('{}\nPassword is fresh enough\n'.format(colors.green))
@@ -83,37 +84,36 @@ def newPassword():
 	# ask for old password
 	userID = askForCredentials()
 	if userID:
-
-		# password must be 5 characters long
-		loop = True
-		while loop:
-			newPW = getpass.getpass('{}New password: (x to abort)'.format(colors.white))
-			if newPW == 'x':
-				print('Aborted!')
-				loop = False
-				return False
-			else:
-				if bcrypt.checkpw(newPW.encode(), userID['dbp']):
-					print('{}Passport is the same!'.format(colors.brightRed))
+		if bcrypt.checkpw(userID['p'], userID['dbp']):
+			# password must be 5 characters long
+			while True:
+				newPW = getpass.getpass('{}New password: (x to abort)'.format(colors.white))
+				if newPW == 'x':
+					print('Aborted!')
+					return False
 				else:
-					if len(newPW) >= 5:
-						# creation date
-						now = datetime.datetime.now()
-						# now = date.today().strftime('%Y-%m-%d')
-						# print(now.date())
-						# connect to db
-						client = MongoClient('mongodb://localhost:27017/')
-						db = client['breakfastPW']
-						collection = db['pw']
-						hashedNewPW = bcrypt.hashpw(newPW.encode(), bcrypt.gensalt())
-						collection.update_one({'userName':userID['userName']},{'$set':{'userPW':hashedNewPW, 'created':now}})
-						loop = False
-						print('{}\nPassword Changed!\n'.format(colors.green))
-						client.close()
-						return True
+					if bcrypt.checkpw(newPW.encode(), userID['dbp']):
+						print('{}Passport is the same!'.format(colors.brightRed))
 					else:
-						print('{}Password must be at least 5 characters long.'.format(colors.brightRed))
+						if len(newPW) >= 5:
+							# creation date
+							now = datetime.datetime.now()
+							# now = date.today().strftime('%Y-%m-%d')
+							# print(now.date())
+							# connect to db
+							client = MongoClient(main.globals['dbAddressActive'])
+							db = client['breakfastPW']
+							collection = db['pw']
+							hashedNewPW = bcrypt.hashpw(newPW.encode(), bcrypt.gensalt())
+							collection.update_one({'userName':userID['userName']},{'$set':{'userPW':hashedNewPW, 'created':now}})
+							print('{}\nPassword Changed!\n'.format(colors.green))
+							client.close()
+							return True
+						else:
+							print('{}Password must be at least 5 characters long.'.format(colors.brightRed))
+		else:
+			print('\n{}Access denied 1 - wrong pass!\n'.format(colors.brightRed))
 	else:
-		print('\n{}Rejected! Privileges removed!\n'.format(colors.brightRed))
+		print('\n{}Access denied 2 - wrong user!\n'.format(colors.brightRed))
 		main.globals['adminModeOn'] = False # deny access, idiot
 		return False

@@ -2,7 +2,7 @@
 import importlib
 import sys
 from datetime import date
-from Modules.mainmenufile import userOptions, nonOfOptionsChosen
+from Modules.mainmenufile import menuOptions, nonOfOptionsChosen
 from Modules.newEntry import breakfastLogging
 from Modules.showEntries import showEntriesMenu
 from Modules.deleteEntries import deleteEntriesMenu
@@ -13,6 +13,7 @@ from Modules.admin import toggleAdminMode, newPassword
 from Modules.timeFocus import setTimeFocus
 from Modules.togglers import toggleDateStamp, toggleForcedOnePerDay
 from Modules.dbHandling import usersMenu
+from Modules.extraDBHandling import whichDB,dbActionMenu
 
 ####################################
 # start of app
@@ -29,16 +30,32 @@ globals = {	'youWantDateStamp':True,
 			'pathToCurrentFile':'',
 			'selectedYear':'',
 			'selectedMonth':'',
-			'mainMenu':{'inputRecs':['1', breakfastLogging],
-						'showRecs':['2', showEntriesMenu],
-						'editRecs':['3', editOne],
-						'deleteRecs':['4', deleteEntriesMenu],
-						'dateStampToggle':['d', toggleDateStamp],
-						'oneRecPerDayForced':['f', toggleForcedOnePerDay],
-						'adminAccess':['a', toggleAdminMode],
-						'viewUsers':['u', usersMenu],
-						'newPassword':['p', newPassword],
-						'timeFocus':['s',setTimeFocus],
+			'dbTypeActive':'local',
+			'dbAddressActive':'mongodb://localhost:27017',
+			'dbAddressLocal':'mongodb://localhost:27017',
+			'dbAddressCloud':'mongodb+srv://user:user@cluster0.itadr.mongodb.net/breakfast?retryWrites=true&w=majority',
+			'mainMenu':{'inputRecs':{'key':'1',
+									'func':breakfastLogging},
+						'showRecs':{'key':'2',
+									'func':showEntriesMenu},
+						'editRecs':{'key':'3',
+									'func':editOne},
+						'deleteRecs':{'key':'4',
+									'func':deleteEntriesMenu},
+						'dateStampToggle':{'key':'d',
+									'func':toggleDateStamp},
+						'oneRecPerDayForced':{'key':'f',
+									'func':toggleForcedOnePerDay},
+						'adminAccess':{'key':'a',
+									'func':toggleAdminMode},
+						'userActions':{'key':'u',
+									'func':usersMenu},
+						'mongodb':	{'key':'m',
+									'func':whichDB},
+						'dbActions':{'key':'b',
+									'func':dbActionMenu},
+						'timeFocus':{'key':'s',
+									'func':setTimeFocus},
 						'help':'?',
 						'exit':'x'}
 			}
@@ -58,28 +75,29 @@ breakfastList = fillBreakfastList(year, month) # globals['pathToCurrentFile'] wi
 loop = True
 while loop:
 	# global youWantDateStamp
-	userChoice = userOptions() # menu
+	userChoice = menuOptions() # menu
 	# Needs user input checking
-	if userChoice == globals['mainMenu']['inputRecs'][0]:
-		globals['mainMenu']['inputRecs'][1](breakfastList, globals['oneRecPerDayForced'], globals['youWantDateStamp'])
-	elif userChoice == globals['mainMenu']['showRecs'][0]:
-		globals['mainMenu']['showRecs'][1](breakfastList)
-	elif userChoice == globals['mainMenu']['editRecs'][0] and globals['adminModeOn']:
-		globals['mainMenu']['editRecs'][1](breakfastList) # editOne
-	elif userChoice == globals['mainMenu']['deleteRecs'][0] and globals['adminModeOn']:
-		globals['mainMenu']['deleteRecs'][1](breakfastList) # deleteEntriesMenu
-	elif userChoice == globals['mainMenu']['dateStampToggle'][0] and globals['adminModeOn']:
-		globals['mainMenu']['dateStampToggle'][1]() # toggleDateStamp
-	elif userChoice == globals['mainMenu']['oneRecPerDayForced'][0] and globals['adminModeOn']:
-		globals['mainMenu']['oneRecPerDayForced'][1]() # toggleForcedOnePerDay
-	elif userChoice == globals['mainMenu']['adminAccess'][0]:
-		globals['mainMenu']['adminAccess'][1]() # toggleAdminMode
-	elif userChoice == globals['mainMenu']['viewUsers'][0] and globals['adminModeOn']:
-		globals['mainMenu']['viewUsers'][1]() # toggleAdminMode
-	elif userChoice == globals['mainMenu']['newPassword'][0] and globals['adminModeOn']:
-		globals['mainMenu']['newPassword'][1]() # toggleAdminMode
-	elif userChoice == globals['mainMenu']['timeFocus'][0]:
-		globals['mainMenu']['timeFocus'][1]()
+	if userChoice == globals['mainMenu']['inputRecs']['key']:
+		globals['mainMenu']['inputRecs']['func'](breakfastList, globals['oneRecPerDayForced'], globals['youWantDateStamp'])
+	elif userChoice == globals['mainMenu']['showRecs']['key']:
+		globals['mainMenu']['showRecs']['func'](breakfastList)
+	elif userChoice == globals['mainMenu']['editRecs']['key'] and globals['adminModeOn']:
+		globals['mainMenu']['editRecs']['func'](breakfastList) # editOne
+	elif userChoice == globals['mainMenu']['deleteRecs']['key'] and globals['adminModeOn']:
+		globals['mainMenu']['deleteRecs']['func'](breakfastList) # deleteEntriesMenu
+	elif userChoice == globals['mainMenu']['dateStampToggle']['key'] and globals['adminModeOn']:
+		globals['mainMenu']['dateStampToggle']['func']() # toggleDateStamp
+	elif userChoice == globals['mainMenu']['oneRecPerDayForced']['key'] and globals['adminModeOn']:
+		globals['mainMenu']['oneRecPerDayForced']['func']() # toggleForcedOnePerDay
+	elif userChoice == globals['mainMenu']['adminAccess']['key']:
+		globals['mainMenu']['adminAccess']['func']() # toggleAdminMode
+	elif userChoice == globals['mainMenu']['userActions']['key'] and globals['adminModeOn']:
+		globals['mainMenu']['userActions']['func']() # toggleAdminMode
+	elif userChoice == globals['mainMenu']['dbActions']['key'] and globals['adminModeOn']:
+		globals['mainMenu']['dbActions']['func']() # do some other mongodb stuff
+
+	elif userChoice == globals['mainMenu']['timeFocus']['key']:
+		globals['mainMenu']['timeFocus']['func']()
 	elif userChoice == globals['mainMenu']['help']:
 		print(globals)
 	elif userChoice == globals['mainMenu']['exit']:

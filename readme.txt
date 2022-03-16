@@ -14,17 +14,27 @@ Currently in Progress:
 
 
 
+
+
+
 Thoughts and ideas for change:
 ------------------------------
-- split number and range check
-- how to syncronize local mongoDB and cloud-mongoDB
-- if no local-mongoDB go to cloud-mongoDB, syncronize the two
+- if new userName checked for similar userNames in DB?
+- userName must be 3 characters
+- make a visual representation of users - show avatar
+- log usercreations, changes and deletions in log.txt
 - if the file log.txt becomes too big save first about 100 lines to another archive
 - a check if today.txt does exist
+- aborted in deleteEntry - not red
+- all options in (b)rackets in red - do a walk through
 - Clean Module-structure
+- logged in as one user, can only change username and password for this user
+2022/03/15-2022/03/15: Make a master password to access all
 
 Errors:
 -------
+
+
 -----------------------------------------------------------------------
 		H I S T O R Y   O F   C H A N G E S / I M P R O V E M E N T S
 StartDate	EndDate				Change
@@ -37,6 +47,14 @@ Not Gited
 
 
 Gited
+2022/03/16-2022/03/16: Use getpass on modified passwords in User Actions and make it impossible to make the same password
+2022/03/16-2022/03/16: Make all key-options in menu to 'key' and 'func'
+2022/03/16-2022/03/16: Fixed, when old password is made new, username and password has to be correct, 2022/03/15-2022/03/15: Correct colors on modify user
+2022/03/15-2022/03/15: Abort feedback on abort - delete recordings
+2022/03/15-2022/03/15: When modifying password update created
+2022/03/??-2022/03/13: Made syncing the two DBs (local and cloud) possible
+2022/03/??-2022/03/13: Fixed the menu options for admins -> move menu option Set MongoDB inside DB Actions
+2022/03/02-2022/03/02: Set MongoDB to local or cloud
 2022/02/27-2022/02/27: Colors in new password - module
 2022/02/27-2022/02/27: Make sure that new password is different from old after password expire
 2022/02/23-2022/02/26: Flush output after keyboard-press (keyboard-module) to avoid (space) in menu - Found it: keyboard.wait('space', suppress = True)

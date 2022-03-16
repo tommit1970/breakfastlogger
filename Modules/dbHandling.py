@@ -3,10 +3,12 @@ import Modules.smallFunctions as smallFuncs
 from pymongo import MongoClient
 import datetime
 import bcrypt
+import __main__ as main
+import getpass
 
 
 def viewUsers():
-	client = MongoClient('mongodb://localhost:27017')
+	client = MongoClient(main.globals['dbAddressActive'])
 
 	db = client['breakfastPW']
 	collection = db['pw']
@@ -26,10 +28,33 @@ def viewUsers():
 	for i,u in userArray:
 		textJunction = '{}{}{}{}{}'.format(colors.green,i,'\t',colors.magenta,u)
 		print(textJunction)
+	print('{}---------------------------------------'.format(colors.white))
 	smallFuncs.printLines(2)
 	client.close()
 
-	return False # done, break loop
+
+def deleteHandling(dbAddress, userName):
+		client = MongoClient(dbAddress)
+
+		db = client['breakfastPW']
+		collection = db['pw']
+
+		result = collection.find({'userName':userName})
+
+		counter = 0
+		for item in result:
+			# print(item)
+			counter = counter + 1
+
+		if counter >= 1:
+			collection.delete_one({'userName':userName})
+
+		client.close()
+		
+		if counter >= 1:
+			return True
+		return False
+	
 
 def deleteUser():
 	viewUsers()
@@ -39,55 +64,58 @@ def deleteUser():
 
 	if userName == 'x':
 		smallFuncs.abortedFeedback()
-		return False
-	client = MongoClient('mongodb://localhost:27017')
+		return
+
+	else:
+		localDel = deleteHandling(main.globals['dbAddressLocal'], userName)
+		if localDel:
+			cloudDel = deleteHandling(main.globals['dbAddressCloud'], userName)
+		
+			if cloudDel:
+				smallFuncs.userDeletedFeedback(userName)
+			else:
+				smallFuncs.userNotFoundFeedback()
+
+
+
+
+def dbSave(dbAddress, userName, userPW):
+	client = MongoClient(dbAddress)
 
 	db = client['breakfastPW']
 	collection = db['pw']
 
-	result = collection.find({'userName':userName})
-
-	counter = 0
-	for item in result:
-		# print(item)
-		counter = counter + 1
-
-	if counter == 1:
-		collection.delete_one({'userName':userName})
-		smallFuncs.userDeletedFeedback(userName, counter)
-
+	now = datetime.datetime.now()
+	collection.insert_one({'userName':userName, 'userPW':userPW, 'created':now})
 	client.close()
-	return False
+
 
 
 def createUser():
-	loop = True
-	while loop:
-		print('UserName:')
+	while True:
+		print('UserName: (x to abort)')
 		userName = input()
+		if userName == 'x':
+			smallFuncs.abortedFeedback()
+			break
 		if indentifyUser(userName):
 			smallFuncs.userExistsFeedback(userName)
 		else:
-			print('Password:')
+			print('Password: (x to abort)')
 			userPW = input()
+			if userPW == 'x':
+				smallFuncs.abortedFeedback()
+				break
 			userPW = bcrypt.hashpw(userPW.encode(), bcrypt.gensalt())
+			dbSave(main.globals['dbAddressLocal'], userName, userPW)
+			dbSave(main.globals['dbAddressCloud'], userName, userPW)
 
-
-			client = MongoClient('mongodb://localhost:27017')
-
-			db = client['breakfastPW']
-			collection = db['pw']
-
-			now = datetime.datetime.now()
-			collection.insert_one({'userName':userName, 'userPW':userPW, 'created':now})
-			client.close()
-			smallFuncs.userCreatedFeedback(userName, now)
-			loop = False
-	return False
+			smallFuncs.userCreatedFeedback(userName)
+			break
 
 
 def indentifyUser(userName):
-	client = MongoClient('mongodb://localhost:27017')
+	client = MongoClient(main.globals['dbAddressActive'])
 
 	db = client['breakfastPW']
 	collection = db['pw']
@@ -100,30 +128,66 @@ def indentifyUser(userName):
 
 	return False # No user
 
-
-def modifyHandler(userName, willBeModified):
-
-	print('What is the new value? (x to abort)')
-	value = input()
-
-	if value == 'x':
-		smallFuncs.abortedFeedback()
-		return False
-	elif willBeModified == 'userPW':
-		value = value.encode()
-		value = bcrypt.hashpw(value, bcrypt.gensalt())
-
-	client = MongoClient('mongodb://localhost:27017')
+def checkPassword(userName, userPW):
+	client = MongoClient(main.globals['dbAddressActive'])
 
 	db = client['breakfastPW']
 	collection = db['pw']
 
-	collection.update_one({'userName':userName},{'$set':{willBeModified:value}})
+	result = collection.find({'userName':userName})
+
+	for item in result:
+		if bcrypt.checkpw(userPW.encode(), item['userPW']):
+			print('{}Passport is the same!{}'.format(colors.brightRed,colors.white))
+			return False
+		else:
+			print('{}Password is new!{}'.format(colors.green, colors.white))
+			return True
+
+
+def modifyInnDB(dbAddress, userName, willBeModified, value):
+	client = MongoClient(dbAddress)
+
+	db = client['breakfastPW']
+	collection = db['pw']
+
+	if willBeModified == 'userPW':
+		newCreated = datetime.datetime.now()
+		collection.update_one({'userName':userName},{'$set':{willBeModified:value,'created':newCreated}})
+	else:
+		collection.update_one({'userName':userName},{'$set':{willBeModified:value}})
 
 	client.close()
 
-	smallFuncs.userDataModifiedFeedback(willBeModified) # feedback
-	return False
+
+def modifyHandler(userName, willBeModified):
+	textJunction = '\nWhat is the new value? (x to abort)'
+	passCheckOK = False
+	while True:
+		if willBeModified == 'userPW':
+			value = getpass.getpass(textJunction + '\n')
+		else:
+			print(textJunction)
+			value = input()
+
+		if value == 'x':
+			smallFuncs.abortedFeedback()
+			return
+		elif willBeModified == 'userPW':
+			# check if password is the same
+			# if same ask again
+			if checkPassword(userName, value):
+				value = value.encode()
+				value = bcrypt.hashpw(value, bcrypt.gensalt())
+				passCheckOK = True
+
+
+		if willBeModified == 'userPW' and passCheckOK or willBeModified == 'userName':
+			modifyInnDB(main.globals['dbAddressLocal'], userName, willBeModified, value)
+			modifyInnDB(main.globals['dbAddressCloud'], userName, willBeModified, value)
+			smallFuncs.userDataModifiedFeedback(willBeModified) # feedback
+			return
+
 
 
 def modifyUser():
@@ -133,44 +197,46 @@ def modifyUser():
 
 	if userName == 'x':
 		smallFuncs.abortedFeedback()
-		return False
+		return
 
 	if indentifyUser(userName):
 
-		loop = True
-		while loop:
+		while True:
 			print('Do you want to modify (u)sername or (p)assword? (x to abort)')
 			userChoice = input()
 
 			if userChoice == 'x':
 				smallFuncs.abortedFeedback()
-				return False
+				break
 			elif userChoice == 'u':
 				# modify username
-				loop = modifyHandler(userName,'userName')
+				modifyHandler(userName,'userName')
+				break
 			elif userChoice == 'p':
 				# modify password
-				loop = modifyHandler(userName,'userPW')
+				modifyHandler(userName,'userPW')
+				break
 	else:
 		smallFuncs.userNotFoundFeedback()
 	return False
 
 
 def usersMenu():
-
-	loop = True
-	while loop:
-
+	while True:
 		print('Do you want to (c)reate a user, (v)iew all users, (d)elete users or (m)odify users? (x to abort)')
 		userChoice = input()
 		if userChoice == 'v':
-			loop = viewUsers()
+			viewUsers()
+			break
 		elif userChoice == 'c':
-			loop = createUser()
+			createUser()
+			break
 		elif userChoice == 'd':
-			loop = deleteUser()
+			deleteUser()
+			break
 		elif userChoice == 'm':
-			loop = modifyUser()
+			modifyUser()
+			break
 		elif userChoice == 'x':
 			smallFuncs.abortedFeedback()
-			loop = False
+			break
