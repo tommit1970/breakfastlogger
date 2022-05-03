@@ -13,23 +13,24 @@ Currently in Progress:
 ----------------------
 
 
-
-
-
+2022/03/??-2022/03/??:- make a visual representation of users - show avatar
 
 Thoughts and ideas for change:
 ------------------------------
-- if new userName checked for similar userNames in DB?
-- userName must be 3 characters
-- make a visual representation of users - show avatar
-- log usercreations, changes and deletions in log.txt
-- if the file log.txt becomes too big save first about 100 lines to another archive
-- a check if today.txt does exist
-- aborted in deleteEntry - not red
-- all options in (b)rackets in red - do a walk through
-- Clean Module-structure
-- logged in as one user, can only change username and password for this user
-2022/03/15-2022/03/15: Make a master password to access all
+- on register breakfast update breakfastList (bug in app already running from 30.april - 1.mai)
+	- check if current date is in the set month
+
+- gap in register checking, from date to date
+- a total remake of datesystem in breakfastDataFile and breakfastList
+- missing entries catcher
+- show entries on delete recordings
+2022/03/??-2022/03/??:- log usercreations, changes and deletions in log.txt
+2022/03/??-2022/03/??:- if the file log.txt becomes too big save first about 100 lines to another archive
+2022/03/??-2022/03/??:- aborted in deleteEntry - not red
+2022/03/??-2022/03/??:- all options in (b)rackets in red - do a walk through
+2022/03/??-2022/03/??:- Clean Module-structure
+2022/03/??-2022/03/??:- logged in as one user, can only change username and password for this user
+2022/03/??-2022/03/??: Make a master password to access all
 
 Errors:
 -------
@@ -43,10 +44,11 @@ Not Gited
 
 
 
-
-
-
 Gited
+2022/04/10-2022/04/20: Making Insert possible in Admin mode (Insert and Edit)
+2022/03/19-2022/03/19:- Check if the file lastEntryDate.txt does exist
+2022/03/17-2022/03/17: UserName must be minimum 3 characters long
+2022/03/17-2022/03/17: Make it not possible to change UserName
 2022/03/16-2022/03/16: Use getpass on modified passwords in User Actions and make it impossible to make the same password
 2022/03/16-2022/03/16: Make all key-options in menu to 'key' and 'func'
 2022/03/16-2022/03/16: Fixed, when old password is made new, username and password has to be correct, 2022/03/15-2022/03/15: Correct colors on modify user

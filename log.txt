@@ -331,3 +331,234 @@ New
 Wed Mar 16 09:47:13 2022
 New
 2022 - 03 - 16 -> Lompe, kaviar, polarbrød, salami, taffelost, pasta, pesto, yoghurt og vann
+Thu Mar 17 21:55:55 2022
+New
+2022 - 03 - 17 -> Havregrøt
+Fri Mar 18 17:15:25 2022
+New
+2022 - 03 - 18 -> Havregrøt
+Sat Mar 19 18:50:34 2022
+New
+2022 - 03 - 19 -> Ravioli og pizza
+Sun Mar 20 08:02:58 2022
+New
+2022 - 03 - 20 -> Pizza
+Sun Mar 20 08:10:36 2022
+New
+2022 - 03 - 20 -> Pizza
+Mon Mar 21 15:57:45 2022
+New
+2022 - 03 - 21 -> Havregrøt
+Tue Mar 22 21:13:41 2022
+New
+2022 - 03 - 22 -> Havregrøt
+Wed Mar 23 22:01:43 2022
+New
+2022 - 03 - 23 -> Egg, kaviar og brød
+Thu Mar 24 22:19:23 2022
+New
+2022 - 03 - 24 -> Havregrøt
+Fri Mar 25 17:43:14 2022
+New
+2022 - 03 - 25 -> Havregrøt
+Sat Mar 26 10:10:43 2022
+New
+2022 - 03 - 26 -> Egg, brød, kaviar og blåbær
+Sat Mar 26 10:11:32 2022
+Edited
+From
+2022 - 03 - 23 -> Egg, kaviar og brød
+to
+2022 - 03 - 23 -> Egg, brød, kaviar og blåbær
+Sun Mar 27 19:28:27 2022
+New
+2022 - 03 - 27 -> Brød, valdrespølse, ripssyltetøy og leverpostei
+Mon Mar 28 22:14:44 2022
+New
+2022 - 03 - 28 -> Havregrøt
+Tue Mar 29 19:58:17 2022
+New
+2022 - 03 - 29 -> Havregrøt
+Wed Mar 30 22:35:02 2022
+New
+2022 - 03 - 30 -> Pizza
+Thu Mar 31 19:24:06 2022
+New
+2022 - 03 - 31 -> Havregrøt
+Sun Apr  3 17:08:25 2022
+New
+2022 - 04 - 03 -> Egg, kaviar og brød
+Mon Apr  4 10:56:27 2022
+New
+2022 - 04 - 04 -> Havregrøt
+Tue Apr  5 17:06:13 2022
+New
+2022 - 04 - 05 -> Havregrøt
+Wed Apr  6 23:23:03 2022
+New
+2022 - 04 - 06 -> Havregrøt
+Thu Apr  7 17:23:44 2022
+New
+2022 - 04 - 07 -> Havregrøt
+Fri Apr  8 12:09:14 2022
+New
+2022 - 04 - 08 -> Havregrøt
+Sun Apr 10 11:02:30 2022
+New
+2022 - 04 - 10 -> Egg, kaviar og brød
+Sun Apr 10 11:12:45 2022
+Edited
+From
+2022 - 04 - 01 -> Havregrøt
+to
+2022 - 04 - 01 -> Havregrøt
+Mon Apr 11 15:36:36 2022
+New
+2022 - 04 - 11 -> Wetabix
+Tue Apr 12 14:54:04 2022
+New
+2022 - 04 - 12 -> Pizza
+Wed Apr 13 19:20:09 2022
+New
+2022 - 04 - 13 -> Brød, leverpostei og sylteagurk
+Thu Apr 14 15:14:13 2022
+New
+2022 - 04 - 14 -> Havregrøt
+Thu Apr 14 18:14:19 2022
+Inserted
+2022 - 4 - 4 -> melis
+Thu Apr 14 18:15:17 2022
+Removed
+2022 - 4 - 4 -> melis
+Thu Apr 14 18:16:05 2022
+Inserted
+2022 - 4 - 4 -> melis
+Thu Apr 14 18:16:18 2022
+Removed
+2022 - 4 - 4 -> melis
+Thu Apr 14 18:26:01 2022
+Inserted
+2022 - 04 - 05 -> melis
+Thu Apr 14 18:26:30 2022
+Removed
+2022 - 04 - 05 -> melis
+Thu Apr 14 18:26:50 2022
+Inserted
+2022 - 04 - 07 -> melis
+Thu Apr 14 18:27:16 2022
+Inserted
+2022 - 04 - 05 -> gress
+Thu Apr 14 18:27:40 2022
+Inserted
+2022 - 04 - 04 -> hamp
+Fri Apr 15 20:15:30 2022
+New
+2022 - 04 - 15 -> Alpen(kornblanding) og melk, brød og taffelost
+Fri Apr 15 20:17:05 2022
+Edited
+From
+2022 - 04 - 15 -> Alpen(kornblanding) og melk, brød og taffelost
+to
+2022 - 04 - 15 -> Alpen(kornblanding) og mandelmelk, brød, taffelostog paprika
+Fri Apr 15 20:17:45 2022
+Edited
+From
+2022 - 04 - 15 -> Alpen(kornblanding) og mandelmelk, brød, taffelostog paprika
+to
+2022 - 04 - 15 -> Alpen(kornblanding) og mandelmelk, brød, taffelost og paprika
+Fri Apr 15 20:18:29 2022
+Inserted
+2022 - 04 - 06 -> Havregrøt
+Fri Apr 15 20:18:55 2022
+Edited
+From
+2022 - 04 - 04 -> hamp
+to
+2022 - 04 - 04 -> Havregrøt
+Fri Apr 15 20:19:08 2022
+Edited
+From
+2022 - 04 - 05 -> gress
+to
+2022 - 04 - 05 -> Havregrøt
+Fri Apr 15 20:19:21 2022
+Edited
+From
+2022 - 04 - 07 -> melis
+to
+2022 - 04 - 07 -> Havregrøt
+Fri Apr 15 20:19:37 2022
+Edited
+From
+2022 - 04 - 09 -> Fiskeboller, poteter og karrisaus
+to
+2022 - 04 - 09 -> x
+Fri Apr 15 20:20:40 2022
+Edited
+From
+2022 - 04 - 09 -> x
+to
+2022 - 04 - 09 -> Fiskeboller, poteter og karrisaus
+Fri Apr 15 20:20:51 2022
+Inserted
+2022 - 04 - 08 -> Havregrøt
+Sat Apr 16 14:41:18 2022
+New
+2022 - 04 - 16 -> Alpen(kornblanding), havre- og mandelmelk
+Sun Apr 17 11:17:37 2022
+New
+2022 - 04 - 17 -> Havregrøt
+Mon Apr 18 11:19:26 2022
+New
+2022 - 04 - 18 -> Eggerøre med tomatbønner, løk, saltpølse og kikerter
+Tue Apr 19 23:45:27 2022
+New
+2022 - 04 - 19 -> Havregrøt
+Wed Apr 20 23:27:28 2022
+New
+2022 - 04 - 20 -> Havregrøt
+Fri Apr 22 23:05:51 2022
+New
+2022 - 04 - 22 -> Havregrøt
+Fri Apr 22 23:06:19 2022
+Inserted
+2022 - 04 - 21 -> Havregrøt
+Sat Apr 23 22:36:07 2022
+New
+2022 - 04 - 23 -> Eggerøre, pizza og eple
+Sun Apr 24 23:48:19 2022
+New
+2022 - 04 - 24 -> Havregrøt
+Mon Apr 25 13:40:18 2022
+New
+2022 - 04 - 25 -> Brød, taffelost, pepperost, lompe og kaviar
+Tue Apr 26 15:03:28 2022
+New
+2022 - 04 - 26 -> Havregrøt
+Wed Apr 27 22:02:13 2022
+New
+2022 - 04 - 27 -> Havregrøt
+Thu Apr 28 20:28:03 2022
+New
+2022 - 04 - 28 -> Havregrøt
+Fri Apr 29 21:28:00 2022
+New
+2022 - 04 - 29 -> Havregrøt
+Sat Apr 30 17:23:06 2022
+New
+2022 - 04 - 30 -> Egg, brød og kaviar
+Sun May  1 11:20:38 2022
+New
+2022 - 05 - 01 -> Rundstykker, salami, japapeno-ost, lomper og kaviar
+Mon May  2 11:50:10 2022
+New
+2022 - 05 - 02 -> Nothing
+Mon May  2 11:51:01 2022
+Edited
+From
+2022 - 05 - 02 -> Nothing
+to
+2022 - 05 - 02 -> Ingenting
+Tue May  3 13:56:38 2022
+New
+2022 - 05 - 03 -> Havregrøt

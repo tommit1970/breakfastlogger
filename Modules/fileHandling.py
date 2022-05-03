@@ -46,7 +46,7 @@ def readFile(fileName):
 	return content
 
 def todayFileChange(date):
-	file = './DataFolder/today.txt'
+	file = main.globals['lastEntryDateFile']
 	print("Changing {}".format(file))
 	todayFile = open(file, 'w', encoding='utf-8')
 	todayFile.write(date)
@@ -68,7 +68,12 @@ def logChange(changeType,changes):
 
 
 # writing to the file
-def writeFile(changeType,changes):
+def writeFile(changeType,changes, position):
+
+	if changeType == 'Inserted':
+		print('I will insert soon at position:', position)
+		print(changes)
+		# return # prevents running rest of func
 	
 	logChange(changeType,changes)
 
@@ -84,6 +89,8 @@ def writeFile(changeType,changes):
 
 	# improve the structure of this function
 	# if changeType == 'New':
+		# do this
+	# if changeType == 'Inserted':
 		# do this
 	# elif changeType == 'Edited':
 		# do this
@@ -107,6 +114,8 @@ def writeFile(changeType,changes):
 	else:
 		print('Writing to SelectedTimeFile')
 		file = main.globals['pathToCurrentFile'] # pathToPresentFile is irrelevant here
+		if changeType == 'Inserted':
+			main.breakfastList.insert(position, changes) # guessing here
 	
 	# does <year>-<month>_breakfastDataFile.txt exist, if not create it
 	file_exists = path.exists(file)

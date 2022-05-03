@@ -17,7 +17,7 @@ def showMenuRegularTop():
 
 
 def showMenuAdmin():
-	textJunction = '{} {} {} - Edit Recordings'.format(colors.bgRed, main.globals['mainMenu']['editRecs']['key'], colors.bgLightGrey)
+	textJunction = '{} {} {} - Edit or Insert Recordings'.format(colors.bgRed, main.globals['mainMenu']['editRecs']['key'], colors.bgLightGrey)
 	print(textJunction)
 	textJunction = '{} {} {} - Delete Recordings'.format(colors.bgRed, main.globals['mainMenu']['deleteRecs']['key'], colors.bgLightGrey)
 	print(textJunction)
@@ -27,7 +27,7 @@ def showMenuAdmin():
 	print(textJunction)
 	textJunction = '{} {} {} - User Actions'.format(colors.bgRed, main.globals['mainMenu']['userActions']['key'], colors.bgLightGrey)
 	print(textJunction)
-	textJunction = '{} {} {} - DB Actions'.format(colors.bgRed, main.globals['mainMenu']['dbActions']['key'], colors.bgLightGrey)
+	textJunction = '{} {} {} - DB Actions - ActiveDB: {}{}{}'.format(colors.bgRed, main.globals['mainMenu']['dbActions']['key'], colors.bgLightGrey, colors.magenta,main.globals['dbTypeActive'].capitalize(),colors.white)
 	print(textJunction)
 
 

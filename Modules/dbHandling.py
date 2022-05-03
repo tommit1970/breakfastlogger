@@ -98,20 +98,23 @@ def createUser():
 		if userName == 'x':
 			smallFuncs.abortedFeedback()
 			break
-		if indentifyUser(userName):
-			smallFuncs.userExistsFeedback(userName)
-		else:
-			print('Password: (x to abort)')
-			userPW = input()
-			if userPW == 'x':
-				smallFuncs.abortedFeedback()
-				break
-			userPW = bcrypt.hashpw(userPW.encode(), bcrypt.gensalt())
-			dbSave(main.globals['dbAddressLocal'], userName, userPW)
-			dbSave(main.globals['dbAddressCloud'], userName, userPW)
 
-			smallFuncs.userCreatedFeedback(userName)
-			break
+		if len(userName) >=3:
+			if indentifyUser(userName):
+				smallFuncs.userExistsFeedback(userName)
+			else:
+				userPW = getpass.getpass('Password: (x to abort)')
+				if userPW == 'x':
+					smallFuncs.abortedFeedback()
+					break
+				userPW = bcrypt.hashpw(userPW.encode(), bcrypt.gensalt())
+				dbSave(main.globals['dbAddressLocal'], userName, userPW)
+				dbSave(main.globals['dbAddressCloud'], userName, userPW)
+
+				smallFuncs.userCreatedFeedback(userName)
+				break
+		else:
+			print('{}\nUsername is too short!\n{}'.format(colors.brightRed, colors.white))
 
 
 def indentifyUser(userName):
@@ -128,6 +131,7 @@ def indentifyUser(userName):
 
 	return False # No user
 
+
 def checkPassword(userName, userPW):
 	client = MongoClient(main.globals['dbAddressActive'])
 
@@ -141,52 +145,37 @@ def checkPassword(userName, userPW):
 			print('{}Passport is the same!{}'.format(colors.brightRed,colors.white))
 			return False
 		else:
-			print('{}Password is new!{}'.format(colors.green, colors.white))
+			print('{}Password changed!{}'.format(colors.green, colors.white))
 			return True
 
 
-def modifyInnDB(dbAddress, userName, willBeModified, value):
-	client = MongoClient(dbAddress)
+def modifyInnDB(dbAddress, userName, value):
+	newCreated = datetime.datetime.now()
 
+	client = MongoClient(dbAddress)
 	db = client['breakfastPW']
 	collection = db['pw']
-
-	if willBeModified == 'userPW':
-		newCreated = datetime.datetime.now()
-		collection.update_one({'userName':userName},{'$set':{willBeModified:value,'created':newCreated}})
-	else:
-		collection.update_one({'userName':userName},{'$set':{willBeModified:value}})
+	collection.update_one({'userName':userName},{'$set':{'userPW':value,'created':newCreated}})
 
 	client.close()
 
 
-def modifyHandler(userName, willBeModified):
-	textJunction = '\nWhat is the new value? (x to abort)'
+def modifyHandler(userName):
 	passCheckOK = False
 	while True:
-		if willBeModified == 'userPW':
-			value = getpass.getpass(textJunction + '\n')
-		else:
-			print(textJunction)
-			value = input()
-
+		textJunction = '\nWhat is the new value? (x to abort)'
+		value = getpass.getpass(textJunction + '\n')
 		if value == 'x':
 			smallFuncs.abortedFeedback()
 			return
-		elif willBeModified == 'userPW':
-			# check if password is the same
-			# if same ask again
-			if checkPassword(userName, value):
+		if checkPassword(userName, value):
+				passCheckOK = True
 				value = value.encode()
 				value = bcrypt.hashpw(value, bcrypt.gensalt())
-				passCheckOK = True
-
-
-		if willBeModified == 'userPW' and passCheckOK or willBeModified == 'userName':
-			modifyInnDB(main.globals['dbAddressLocal'], userName, willBeModified, value)
-			modifyInnDB(main.globals['dbAddressCloud'], userName, willBeModified, value)
-			smallFuncs.userDataModifiedFeedback(willBeModified) # feedback
-			return
+				modifyInnDB(main.globals['dbAddressLocal'], userName, value)
+				modifyInnDB(main.globals['dbAddressCloud'], userName, value)
+				smallFuncs.userDataModifiedFeedback('UserPW') # feedback
+				return
 
 
 
@@ -202,19 +191,15 @@ def modifyUser():
 	if indentifyUser(userName):
 
 		while True:
-			print('Do you want to modify (u)sername or (p)assword? (x to abort)')
+			print('Do you want to modify the ({}p{})assword? ({}x to abort{})'.format(colors.brightRed,colors.white,colors.brightRed,colors.white))
 			userChoice = input()
 
 			if userChoice == 'x':
 				smallFuncs.abortedFeedback()
 				break
-			elif userChoice == 'u':
-				# modify username
-				modifyHandler(userName,'userName')
-				break
 			elif userChoice == 'p':
 				# modify password
-				modifyHandler(userName,'userPW')
+				modifyHandler(userName)
 				break
 	else:
 		smallFuncs.userNotFoundFeedback()

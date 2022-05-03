@@ -31,7 +31,7 @@ def handleRangeDeletion(firstIndex, lastIndex, breakfastList):
 			changes = changes + '\n' + breakfastList[firstIndex]
 		del breakfastList[firstIndex]
 
-	writeFile("Removed",changes)
+	writeFile("Removed",changes, False) # False for position-parameter for Inserted
 
 def deleteRange(breakfastList):
 	loop = True
@@ -102,7 +102,7 @@ def deleteOne(breakfastList):
 				print('\n{}Removed:{}'.format(colors.brightRed, colors.white))
 				print('({}{}{}) {}\n'.format(colors.brightRed,str(userChoice),colors.white,changes))
 				del breakfastList[userChoice]
-				writeFile('Removed',changes)
+				writeFile('Removed',changes, False) # False position-parameter for Inserted
 				loop = False
 			else:
 				print(message)

@@ -97,12 +97,12 @@ def whichDB():
 			smallFuncs.abortedFeedback()
 			break
 		elif userChoice == 'l':
-			main.globals['dbType'] = 'local'
-			main.globals['dbAddress'] = 'mongodb://localhost:27017'
+			main.globals['dbTypeActive'] = 'local'
+			main.globals['dbAddressActive'] = 'mongodb://localhost:27017'
 			break
 		elif userChoice == 'c':
-			main.globals['dbType'] = 'cloud'
-			main.globals['dbAddress'] = 'mongodb+srv://user:user@cluster0.itadr.mongodb.net/breakfast?retryWrites=true&w=majority'
+			main.globals['dbTypeActive'] = 'cloud'
+			main.globals['dbAddressActive'] = 'mongodb+srv://user:user@cluster0.itadr.mongodb.net/breakfast?retryWrites=true&w=majority'
 			break
 
 
