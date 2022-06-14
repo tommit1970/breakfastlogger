@@ -11,19 +11,22 @@ See LastPass - GitHub - notes! I need to use this for a while to get used to it.
 
 Currently in Progress:
 ----------------------
+2022/04/01-2022/05/15: Making a the start of a windows-version of BreakfastLogger, incl. training on tkinter
 
 
-2022/03/??-2022/03/??:- make a visual representation of users - show avatar
 
 Thoughts and ideas for change:
 ------------------------------
+- read log option
 - on register breakfast update breakfastList (bug in app already running from 30.april - 1.mai)
 	- check if current date is in the set month
-
+- scan months to check if there are any irregularities (like may in april)
+- scan if there are any missing entries
+- adminaccess: True/False in heading, a = Login/Logout
 - gap in register checking, from date to date
 - a total remake of datesystem in breakfastDataFile and breakfastList
-- missing entries catcher
 - show entries on delete recordings
+2022/03/??-2022/03/??:- make a visual representation of users - show avatar
 2022/03/??-2022/03/??:- log usercreations, changes and deletions in log.txt
 2022/03/??-2022/03/??:- if the file log.txt becomes too big save first about 100 lines to another archive
 2022/03/??-2022/03/??:- aborted in deleteEntry - not red

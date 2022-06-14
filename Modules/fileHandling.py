@@ -23,7 +23,7 @@ def fillBreakfastList(year, month):
 	else:
 		# check directory year
 		if not path.isdir(directory):
-			# if no year make year
+			# if no year make year directory
 			mkdir(directory)
 			print('{} was created'.format(directory))
 
@@ -68,7 +68,7 @@ def logChange(changeType,changes):
 
 
 # writing to the file
-def writeFile(changeType,changes, position):
+def writeFile(changeType, changes, position):
 
 	if changeType == 'Inserted':
 		print('I will insert soon at position:', position)

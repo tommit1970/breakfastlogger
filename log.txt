@@ -562,3 +562,147 @@ to
 Tue May  3 13:56:38 2022
 New
 2022 - 05 - 03 -> Havregrøt
+Wed May  4 13:26:17 2022
+New
+2022 - 05 - 04 -> Knekkebrød, salami, majones, kaviar og lompe
+Thu May  5 20:21:05 2022
+New
+2022 - 05 - 05 -> Havregrøt
+Fri May  6 21:41:16 2022
+New
+2022 - 05 - 06 -> Havregrøt
+Mon May  9 21:30:33 2022
+New
+2022 - 05 - 09 -> Havregrøt
+Mon May  9 21:31:40 2022
+Inserted
+2022 - 05 - 07 -> Aner ikke
+Mon May  9 21:32:43 2022
+Inserted
+2022 - 05 - 08 -> Aner ikke
+Mon May  9 21:33:03 2022
+Edited
+From
+2022 - 05 - 07 -> Aner ikke
+to
+2022 - 05 - 07 -> Egg, kaviar og brød
+Tue May 10 22:23:33 2022
+New
+2022 - 05 - 10 -> Havregrøt
+Wed May 11 22:37:44 2022
+New
+2022 - 05 - 11 -> Havregrøt
+Sun May 15 13:18:02 2022
+New
+2022 - 05 - 15 -> Egg, kaviar og brød
+Sun May 15 13:18:57 2022
+Edited
+From
+2022 - 05 - 11 -> Havregrøt
+to
+2022 - 05 - 11 -> Havregrøt
+Sun May 15 13:19:31 2022
+Inserted
+2022 - 05 - 12 -> Havregrøt
+Sun May 15 13:19:48 2022
+Inserted
+2022 - 05 - 13 -> Havregrøt
+Sun May 15 13:20:35 2022
+Inserted
+2022 - 05 - 14 -> Eggerøre, løk, ris og champignon
+Tue May 17 14:21:31 2022
+New
+2022 - 05 - 17 -> Havregrøt
+Tue May 17 14:22:17 2022
+Inserted
+2022 - 05 - 16 -> Havregrøt
+Fri May 20 18:52:52 2022
+New
+2022 - 05 - 20 -> Havregrøt
+Fri May 20 18:53:43 2022
+Inserted
+2022 - 05 - 18 -> Havregrøt
+Fri May 20 18:53:54 2022
+Inserted
+2022 - 05 - 19 -> Havregrøt
+Sun May 22 13:35:25 2022
+New
+2022 - 05 - 22 -> Lasagnerester og salat
+Sun May 22 14:08:24 2022
+Inserted
+2022 - 05 - 21 -> Pizza
+Fri May 27 16:58:05 2022
+New
+2022 - 05 - 27 -> Brød, jalapeño-ost og krepsehalesalat
+Fri May 27 16:59:03 2022
+Inserted
+2022 - 05 - 23 -> Havregrøt
+Fri May 27 16:59:28 2022
+Inserted
+2022 - 05 - 24 -> Havregrøt
+Fri May 27 16:59:48 2022
+Inserted
+2022 - 05 - 25 -> Havregrøt
+Fri May 27 17:00:57 2022
+Inserted
+2022 - 05 - 26 -> Havregrøt
+Sat May 28 18:31:23 2022
+New
+2022 - 05 - 28 -> Egg og brød
+Sun May 29 21:33:10 2022
+New
+2022 - 05 - 29 -> Tre sliders
+Mon May 30 16:16:34 2022
+New
+2022 - 05 - 30 -> Havregrøt
+Tue May 31 22:56:07 2022
+New
+2022 - 05 - 31 -> Havregrøt
+Wed Jun  1 23:17:52 2022
+New
+2022 - 06 - 01 -> Havregrøt
+Wed Jun  1 23:19:10 2022
+Edited
+From
+2022 - 06 - 01 -> Havregrøt
+to
+2022 - 06 - 01 -> Brød, majones og helgeroapølse
+Sat Jun  4 22:04:35 2022
+New
+2022 - 06 - 04 -> Pizza, nachos, egg, kaviar og brød
+Sat Jun  4 22:05:05 2022
+Inserted
+2022 - 06 - 02 -> Havregrøt
+Sat Jun  4 22:05:23 2022
+Inserted
+2022 - 06 - 03 -> Havregrøt
+Sun Jun  5 20:22:06 2022
+New
+2022 - 06 - 05 -> Eggerøre, brød, blåbærsyltetøy, brie, fiken og honning, kaviar og lompe
+Mon Jun  6 23:18:20 2022
+New
+2022 - 06 - 06 -> Eggerøre, lompe, kaviar, brød, blåbærsyltetøy, flat fersken, appelsinjuice og tranebærjuice
+Tue Jun  7 22:16:54 2022
+New
+2022 - 06 - 07 -> Havregrøt
+Fri Jun 10 00:45:32 2022
+New
+2022 - 06 - 10 -> Havregrøt
+Fri Jun 10 00:46:27 2022
+Inserted
+2022 - 06 - 08 -> Havregrøt
+Fri Jun 10 00:46:54 2022
+Inserted
+2022 - 06 - 09 -> Knekkebrød og tomatbønner
+Mon Jun 13 13:29:50 2022
+New
+2022 - 06 - 13 -> Havregrøt
+Mon Jun 13 13:31:28 2022
+Inserted
+2022 - 06 - 11 -> Egg, rundstykke og leverpostei
+Mon Jun 13 13:31:41 2022
+Inserted
+2022 - 06 - 12 -> Havregrøt
+Tue Jun 14 21:37:01 2022
+New
+2022 - 06 - 14 -> Havregrøt
